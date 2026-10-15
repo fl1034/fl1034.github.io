@@ -1,6 +1,6 @@
 'use strict';
 document.body.classList.add('js');
-const config = {email: 'john.smith@example.com'};
+const config = {email: 'fl1034nk@gmail.com'};
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.getElementById('main-nav');
 menuButton.addEventListener('click', () => {
