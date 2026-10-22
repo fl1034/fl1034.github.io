@@ -1,0 +1,558 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portfolio content",
+  "type": "object",
+  "properties": {
+    "profile": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Your name. Used throughout the website and r\u00e9sum\u00e9."
+        },
+        "role": {
+          "type": "string"
+        },
+        "headline": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The only applicant email address. Controls every display and the contact email link."
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "description": "Path to your photo, relative to index.html."
+            },
+            "alt": {
+              "type": "string"
+            },
+            "caption": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "src",
+            "alt",
+            "caption"
+          ]
+        },
+        "socialLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "url"
+            ]
+          }
+        }
+      },
+      "required": [
+        "name",
+        "role",
+        "headline",
+        "location",
+        "email",
+        "photo",
+        "socialLinks"
+      ]
+    },
+    "about": {
+      "type": "object",
+      "properties": {
+        "introduction": {
+          "type": "string"
+        },
+        "story": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "careerGoal": {
+          "type": "string"
+        },
+        "interests": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "introduction",
+        "story",
+        "careerGoal",
+        "interests"
+      ]
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "institution": {
+            "type": "string"
+          },
+          "qualification": {
+            "type": "string"
+          },
+          "startYear": {
+            "type": "string"
+          },
+          "endYear": {
+            "type": "string"
+          },
+          "completion": {
+            "type": "string"
+          },
+          "learning": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "institution",
+          "qualification",
+          "startYear",
+          "endYear",
+          "completion",
+          "learning"
+        ]
+      }
+    },
+    "projectsIntro": {
+      "type": "string"
+    },
+    "sampleNotice": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "url"
+            ]
+          },
+          "image": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "src",
+              "alt"
+            ]
+          },
+          "technologies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "demoUrl": {
+            "type": "string",
+            "description": "Real live-demo URL. Leave empty until the demo is available."
+          },
+          "roleAndChallenge": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "text"
+              ]
+            },
+            "minItems": 2
+          },
+          "reflection": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "text"
+              ]
+            },
+            "minItems": 2
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "status",
+          "description",
+          "source",
+          "image",
+          "technologies",
+          "demoUrl",
+          "roleAndChallenge",
+          "reflection"
+        ]
+      }
+    },
+    "skills": {
+      "type": "object",
+      "properties": {
+        "introduction": {
+          "type": "string"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "level": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "items",
+              "level"
+            ]
+          }
+        },
+        "workingStrengths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "certifications": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "introduction",
+        "groups",
+        "workingStrengths",
+        "certifications"
+      ]
+    },
+    "resume": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "coreSkills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "selectedProjectIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "experienceHeading": {
+          "type": "string"
+        },
+        "nextSteps": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "summary",
+        "coreSkills",
+        "selectedProjectIds",
+        "experienceHeading",
+        "nextSteps"
+      ]
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "invitation": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string"
+        },
+        "sampleEmailNotice": {
+          "type": "string"
+        },
+        "formNote": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "invitation",
+        "availability",
+        "sampleEmailNotice",
+        "formNote"
+      ]
+    },
+    "site": {
+      "type": "object",
+      "properties": {
+        "themeColor": {
+          "type": "string"
+        },
+        "navigation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "label"
+            ]
+          }
+        },
+        "labels": {
+          "type": "object",
+          "properties": {
+            "projectNameDescription": {
+              "type": "string"
+            },
+            "technologies": {
+              "type": "string"
+            },
+            "artifacts": {
+              "type": "string"
+            },
+            "roleChallenge": {
+              "type": "string"
+            },
+            "reflection": {
+              "type": "string"
+            },
+            "demo": {
+              "type": "string"
+            },
+            "demoPending": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "conceptImage": {
+              "type": "string"
+            },
+            "viewProjects": {
+              "type": "string"
+            },
+            "viewResume": {
+              "type": "string"
+            },
+            "printResume": {
+              "type": "string"
+            },
+            "education": {
+              "type": "string"
+            },
+            "careerGoal": {
+              "type": "string"
+            },
+            "interests": {
+              "type": "string"
+            },
+            "certifications": {
+              "type": "string"
+            },
+            "workingStrengths": {
+              "type": "string"
+            },
+            "backToTop": {
+              "type": "string"
+            },
+            "contactEmail": {
+              "type": "string"
+            },
+            "availability": {
+              "type": "string"
+            },
+            "formName": {
+              "type": "string"
+            },
+            "formEmail": {
+              "type": "string"
+            },
+            "formSubject": {
+              "type": "string"
+            },
+            "formMessage": {
+              "type": "string"
+            },
+            "prepareDraft": {
+              "type": "string"
+            },
+            "draftTitle": {
+              "type": "string"
+            },
+            "copyDraft": {
+              "type": "string"
+            },
+            "openEmail": {
+              "type": "string"
+            },
+            "close": {
+              "type": "string"
+            },
+            "draftReady": {
+              "type": "string"
+            },
+            "copied": {
+              "type": "string"
+            },
+            "copyFallback": {
+              "type": "string"
+            },
+            "whitespaceError": {
+              "type": "string"
+            },
+            "sampleDraftNotice": {
+              "type": "string"
+            },
+            "realDraftNotice": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectNameDescription",
+            "technologies",
+            "artifacts",
+            "roleChallenge",
+            "reflection",
+            "demo",
+            "demoPending",
+            "source",
+            "conceptImage",
+            "viewProjects",
+            "viewResume",
+            "printResume",
+            "education",
+            "careerGoal",
+            "interests",
+            "certifications",
+            "workingStrengths",
+            "backToTop",
+            "contactEmail",
+            "availability",
+            "formName",
+            "formEmail",
+            "formSubject",
+            "formMessage",
+            "prepareDraft",
+            "draftTitle",
+            "copyDraft",
+            "openEmail",
+            "close",
+            "draftReady",
+            "copied",
+            "copyFallback",
+            "whitespaceError",
+            "sampleDraftNotice",
+            "realDraftNotice"
+          ]
+        },
+        "footer": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "themeColor",
+        "navigation",
+        "labels",
+        "footer"
+      ]
+    }
+  },
+  "required": [
+    "profile",
+    "about",
+    "education",
+    "projectsIntro",
+    "sampleNotice",
+    "projects",
+    "skills",
+    "resume",
+    "contact",
+    "site"
+  ]
+}

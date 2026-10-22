@@ -1,0 +1,173 @@
+"use client";
+import BlurFade from "@/components/magicui/blur-fade";
+import BlurFadeText from "@/components/magicui/blur-fade-text";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import {Badge} from "@/components/ui/badge";
+import {ProjectCard} from "@/components/project-card";
+import Navbar from "@/components/navbar";
+import {ArrowDown, ArrowUpRight, GraduationCap, MapPin, Printer} from "lucide-react";
+import {emailHref, safeImage, safeWebUrl, type Portfolio} from "@/lib/portfolio";
+
+export function PortfolioView({data}: { data: Portfolio }) {
+    const {profile, about, education, projects, skills, resume, contact, site} = data;
+    const l = site.labels;
+    const initials = profile.name.split(/\s+/).map(s => s[0]).slice(0, 2).join("");
+    const sampleEmail = profile.email.endsWith("@example.com");
+    const mail = emailHref(profile.email);
+    return <>
+        <main id="main" className="min-h-dvh flex flex-col gap-16 relative">
+            <section id="hero" className="scroll-mt-8">
+                <div className="gap-6 flex flex-col sm:flex-row justify-between">
+                    <div className="gap-3 flex flex-col order-2 sm:order-1 max-w-xl">
+                        <h1><BlurFadeText delay={0.04}
+                                          className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
+                                          yOffset={8} text={profile.name}/></h1>
+                        <BlurFade delay={0.08}>
+                            <p className="text-lg text-foreground font-medium leading-relaxed">{profile.role}</p>
+                            <p className="text-muted-foreground text-lg leading-relaxed">{profile.headline}</p>
+                        </BlurFade>
+                        <BlurFade delay={0.12}><p className="text-sm text-muted-foreground flex items-start gap-1.5">
+                            <MapPin aria-hidden="true" className="size-3.5 mt-0.5 shrink-0"/>{profile.location}</p>
+                        </BlurFade>
+                        <BlurFade delay={0.16} className="flex flex-wrap gap-3 pt-3">
+                            <a href="#projects"
+                               className="inline-flex gap-2 items-center rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-85">{l.viewProjects}<ArrowDown
+                                className="size-3.5" aria-hidden="true"/></a>
+                            <a href="#resume"
+                               className="inline-flex items-center rounded-lg border border-border px-4 py-2.5 text-sm font-medium hover:bg-muted">{l.viewResume}</a>
+                        </BlurFade>
+                    </div>
+                    <BlurFade delay={0.04} className="order-1 sm:order-2 shrink-0">
+                        <figure className="space-y-3 text-center w-28 sm:w-32">
+                            <Avatar className="size-28 sm:size-32 border rounded-full shadow-lg ring-4 ring-muted">
+                                <AvatarImage alt={profile.photo.alt} src={safeImage(profile.photo.src)}/>
+                                <AvatarFallback>{initials}</AvatarFallback>
+                            </Avatar>
+                            {profile.photo.caption && <figcaption
+                                className="text-xs text-muted-foreground">{profile.photo.caption}</figcaption>}
+                        </figure>
+                    </BlurFade>
+                </div>
+            </section>
+            <section id="about" className="scroll-mt-8 space-y-5">
+                <BlurFade delay={0.12}><h2 className="text-xl font-bold">{l.about}</h2></BlurFade>
+                <BlurFade delay={0.16} className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p>{about.introduction}</p>
+                    {about.story.map((text, i) => <p key={i}>{text}</p>)}
+                    <p>{about.careerGoal}</p>
+                    <p className="text-sm"><span
+                        className="font-medium text-foreground">{l.interests}: </span>{about.interests.join(" · ")}</p>
+                </BlurFade>
+            </section>
+            <section id="education" className="scroll-mt-8 space-y-6">
+                <BlurFade><h2 className="text-xl font-bold">{l.education}</h2></BlurFade>
+                {education.map(item => <BlurFade key={item.institution}>
+                    <div className="flex items-start gap-4">
+                        <div
+                            className="size-10 border rounded-full shadow ring-2 ring-border flex items-center justify-center shrink-0">
+                            <GraduationCap className="size-5" aria-hidden="true"/></div>
+                        <div className="flex-1 min-w-0 space-y-2">
+                            <div className="flex flex-col sm:flex-row sm:justify-between gap-1"><h3
+                                className="font-semibold">{item.institution}</h3><p
+                                className="text-xs tabular-nums text-muted-foreground pt-1">{item.startYear}–{item.endYear}</p>
+                            </div>
+                            <p className="text-sm">{item.qualification}</p><p
+                            className="text-sm text-muted-foreground">{item.completion}</p>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{item.learning.join(" · ")}</p>
+                        </div>
+                    </div>
+                </BlurFade>)}
+            </section>
+            <section id="projects" className="scroll-mt-8 space-y-8">
+                <BlurFade className="flex flex-col gap-4 items-center text-center">
+                    <div className="flex items-center w-full gap-4">
+                        <div className="flex-1 h-px bg-linear-to-r from-transparent to-border"/>
+                        <span
+                            className="border bg-primary text-background rounded-xl px-4 py-1 text-sm font-medium">{l.projects}</span>
+                        <div className="flex-1 h-px bg-linear-to-l from-transparent to-border"/>
+                    </div>
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">AI & application projects</h2>
+                    <p className="text-muted-foreground leading-relaxed max-w-xl">{data.projectsIntro}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed max-w-xl">{data.sampleNotice}</p>
+                </BlurFade>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 items-start">
+                    {projects.map((project, i) => <BlurFade key={project.id} delay={0.04 + (i % 2) * 0.05} inView
+                                                            className="h-full"><ProjectCard project={project}
+                                                                                            labels={l}/></BlurFade>)}
+                </div>
+            </section>
+            <section id="skills" className="scroll-mt-8 space-y-6">
+                <BlurFade className="space-y-4"><h2 className="text-xl font-bold">{l.skills}</h2><p
+                    className="text-muted-foreground leading-relaxed">{skills.introduction}</p></BlurFade>
+                {skills.groups.map(group => <BlurFade key={group.name} inView className="space-y-3">
+                    <h3 className="text-sm font-semibold">{group.name}</h3>
+                    <ul className="flex flex-wrap gap-2">{group.items.map(item => <li key={item}><span
+                        className="border bg-background border-border ring-2 ring-border/20 rounded-xl min-h-8 px-3 py-1 inline-flex items-center text-sm font-medium">{item}</span>
+                    </li>)}</ul>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{group.level}</p>
+                </BlurFade>)}
+                <BlurFade inView className="space-y-3"><h3 className="text-sm font-semibold">{l.workingStrengths}</h3><p
+                    className="text-sm text-muted-foreground leading-relaxed">{skills.workingStrengths.join(" · ")}</p>
+                </BlurFade>
+                <BlurFade inView className="space-y-3"><h3 className="text-sm font-semibold">{l.certifications}</h3><p
+                    className="text-sm text-muted-foreground leading-relaxed">{skills.certifications}</p></BlurFade>
+            </section>
+            <section id="resume" className="scroll-mt-8 space-y-5 border-t border-border pt-10">
+                <BlurFade inView className="space-y-5">
+                    <div className="flex flex-wrap items-center justify-between gap-3"><h2
+                        className="text-xl font-bold">{l.resume}</h2>
+                        <button type="button"
+                                className="print-button inline-flex items-center gap-2 border border-border rounded-lg px-3 py-2 text-xs font-medium hover:bg-muted"
+                                onClick={() => window.print()}><Printer className="size-3.5"
+                                                                        aria-hidden="true"/>{l.printResume}</button>
+                    </div>
+                    <div className="print-only"><h1>{profile.name}</h1><p>{profile.role} · {profile.location}</p>
+                        <p>{profile.email}</p></div>
+                    <p className="text-muted-foreground leading-relaxed">{resume.summary}</p>
+                    <ul className="flex flex-wrap gap-2">{resume.coreSkills.map(item => <li key={item}><Badge
+                        variant="secondary">{item}</Badge></li>)}</ul>
+                    <div className="space-y-2"><h3
+                        className="text-sm font-semibold">{l.education}</h3>{education.map(item => <p
+                        key={item.institution}
+                        className="text-sm text-muted-foreground">{item.institution} · {item.qualification} · {item.startYear}–{item.endYear}</p>)}
+                    </div>
+                    <div className="space-y-3"><h3 className="text-sm font-semibold">{resume.experienceHeading}</h3>
+                        <ul className="space-y-3 text-sm text-muted-foreground">{projects.filter(p => resume.selectedProjectIds.includes(p.id)).map(p =>
+                            <li key={p.id}><a href={`#project-${p.id}`}
+                                              className="font-medium text-foreground underline underline-offset-4">{p.name}</a>
+                                <p className="leading-relaxed mt-1">{p.description}</p><p
+                                    className="text-xs mt-1">{p.technologies.join(" · ")}</p></li>)}</ul>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{resume.nextSteps}</p>
+                </BlurFade>
+            </section>
+            <section id="contact" className="scroll-mt-8 space-y-5 border-t border-border pt-10">
+                <BlurFade inView className="space-y-5">
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{l.contact}</h2>
+                    <p className="text-muted-foreground leading-relaxed">{contact.invitation}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{contact.availability}</p>
+                    <div>{!sampleEmail && mail ? <a href={mail}
+                                                    className="text-lg font-medium underline underline-offset-4 break-all">{profile.email}</a> :
+                        <p className="text-lg font-medium break-all">{profile.email}</p>}
+                        {sampleEmail &&
+                            <p className="mt-2 text-xs text-muted-foreground">{contact.sampleEmailNotice}</p>}
+                    </div>
+                    <div className="flex gap-4 flex-wrap">{profile.socialLinks.map(item => {
+                        const url = safeWebUrl(item.url);
+                        return url ? <a key={item.label} href={url} target="_blank" rel="noopener noreferrer"
+                                        className="text-sm inline-flex gap-1 items-center underline underline-offset-4">{item.label}<ArrowUpRight
+                            className="size-3" aria-hidden="true"/></a> : null;
+                    })}</div>
+                </BlurFade>
+            </section>
+            <footer
+                className="flex flex-col sm:flex-row justify-between gap-2 text-xs text-muted-foreground border-t border-border pt-6">
+                <p>{profile.name} · {site.footer}</p><p>Template by <a href="https://github.com/magicuidesign/portfolio"
+                                                                       target="_blank" rel="noopener noreferrer"
+                                                                       className="underline underline-offset-4">Magic
+                UI</a></p>
+            </footer>
+        </main>
+        <Navbar items={site.navigation}/>
+    </>;
+}

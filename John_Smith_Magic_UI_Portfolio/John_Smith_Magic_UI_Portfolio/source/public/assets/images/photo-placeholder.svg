@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <rect width="400" height="400" fill="#f0e5df"/>
+    <circle cx="200" cy="146" r="66" fill="#cba890"/>
+    <path d="M72 360c0-103 49-151 128-151s128 48 128 151" fill="#cba890"/>
+    <text x="200" y="385" text-anchor="middle" fill="#5f4940" font-family="sans-serif" font-size="18"
+          letter-spacing="2">PHOTO PLACEHOLDER
+    </text>
+</svg>
