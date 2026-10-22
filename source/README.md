@@ -11,7 +11,7 @@ skills, or projects.
 
 - `profile.email` controls the displayed email, contact link, and printed résumé. The sample `@example.com` address is
   deliberately displayed without an active email link. Replace it with your address to enable the link.
-- `profile.photo.src` selects your photo. Put the image in `public/assets/images/`, update the relative path, and change
+- `profile.photo.src` selects your photo. Put the image in `public/assets/images`, update the relative path, and change
   its alt text/caption. The supplied image is a placeholder.
 - `profile.socialLinks` contains GitHub and LinkedIn URLs. Empty links are hidden.
 - Each project has a name/description, technologies, one live-demo artifact, role/challenge bullets, and reflection
@@ -21,9 +21,9 @@ skills, or projects.
 - Paragraphs and bullets grow naturally; the cards do not truncate text.
 - Keep JSON commas and double quotes valid. `public/portfolio.schema.json` provides editor assistance.
 
-The site fetches this JSON at runtime. **In the ready-built website, edit `website/portfolio.json`; no rebuild is needed
+The site fetches this JSON at runtime. **In the ready-built website, edit `../portfolio.json`; no rebuild is needed
 for content changes.** Treat the source and built JSON copies as alternative workflows: if rebuilding later, copy your
-latest JSON back to `source/public/portfolio.json` first.
+latest JSON back to `public/portfolio.json` first.
 
 ## Develop and build
 
@@ -49,16 +49,17 @@ preview it locally:
 python3 -m http.server 8000 --directory out
 ```
 
-Open `http://localhost:8000`. On Windows, use `py -m http.server 8000 --directory out`. Opening `index.html` directly
+Open `http://localhost:8000`. On Windows, use `py -m http.server 8000 --directory out`. Opening `../index.html` directly
 with a `file://` URL will not work because browsers restrict JSON fetching.
 
 ## GitHub Pages
 
-Copy the **contents** of `out/` (or the ZIP's `website/`) to your Pages publishing directory. Include `.nojekyll` and
+Copy the **contents** of `out/` (or the ZIP's `..`) to your Pages publishing directory. Include `.nojekyll` and
 the complete `_next/` folder. Select that publishing branch/folder in GitHub Pages settings.
 
 The page uses relative asset paths and fragment navigation, so it can be hosted at a domain root or a repository
-subpath. Keep `index.html`, `portfolio.json`, `assets/`, and `_next/` beside one another. Serve the directory URL with a
+subpath. Keep `../index.html`, `portfolio.json`, `assets/`, and `_next/` beside one another. Serve the directory URL
+with a
 trailing slash. Content loads with JavaScript; the browser title updates from the JSON, while the exported initial
 metadata is generic.
 

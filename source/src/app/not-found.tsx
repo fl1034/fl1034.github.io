@@ -19,7 +19,7 @@ export default function NotFound() {
                         moved.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
-                        <Link href="/">
+                        <Link href="/website/source/public">
                             <Button variant="outline" className="gap-2 cursor-pointer">
                                 <Home className="h-4 w-4"/>
                                 Go to Home

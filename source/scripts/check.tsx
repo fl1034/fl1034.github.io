@@ -3,10 +3,10 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {renderToStaticMarkup} from "react-dom/server";
 import {parseHTML} from "linkedom";
-import {PortfolioView} from "../src/components/portfolio-view";
-import {TooltipProvider} from "../src/components/ui/tooltip";
-import {ThemeProvider} from "../src/components/theme-provider";
-import {validatePortfolio, safeWebUrl, safeImage, emailHref, type Portfolio} from "../src/lib/portfolio";
+import {PortfolioView} from "@/components/portfolio-view";
+import {TooltipProvider} from "@/components/ui/tooltip";
+import {ThemeProvider} from "@/components/theme-provider";
+import {validatePortfolio, safeWebUrl, safeImage, emailHref, type Portfolio} from "@/lib/portfolio";
 
 const data: Portfolio = JSON.parse(readFileSync(new URL("../public/portfolio.json", import.meta.url), "utf8"));
 validatePortfolio(data);

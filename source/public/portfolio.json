@@ -1,5 +1,5 @@
 {
-  "$schema": "./portfolio.schema.json",
+  "$schema": "portfolio.schema.json",
   "profile": {
     "name": "John Smith",
     "role": "Computer System Technology student",

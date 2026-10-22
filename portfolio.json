@@ -1,11 +1,11 @@
 {
   "$schema": "./portfolio.schema.json",
   "profile": {
-    "name": "John Smith",
+    "name": "Feitian Li",
     "role": "Computer System Technology student",
     "headline": "Seeking a junior developer role",
-    "location": "Saskatoon, Saskatchewan, Canada",
-    "email": "john.smith@example.com",
+    "location": "Regina, Saskatchewan, Canada",
+    "email": "fl1034nk@gmail.com",
     "photo": {
       "src": "assets/images/photo-placeholder.svg",
       "alt": "Professional photo placeholder",

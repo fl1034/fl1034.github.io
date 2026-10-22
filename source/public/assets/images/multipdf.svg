@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" fill="none">
+    <defs>
+        <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+            <path d="M42 0H0V42" stroke="#193d3b" stroke-opacity=".055"/>
+        </pattern>
+        <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#203735" flood-opacity=".12"/>
+        </filter>
+    </defs>
+    <rect width="1000" height="650" fill="#eaf0e7"/>
+    <rect width="1000" height="650" fill="url(#grid)"/>
+    <circle cx="745" cy="175" r="112" fill="#d1e5da"/>
+    <g transform="translate(210 155) rotate(-12 180 160)" filter="url(#shadow)">
+        <rect width="320" height="385" rx="16" fill="#c6d6ce" stroke="#9fb8aa"/>
+        <path d="M48 80H245M48 112H205M48 160H265M48 192H240M48 224H220" stroke="#94aa9e" stroke-width="10"
+              stroke-linecap="round"/>
+    </g>
+    <g transform="translate(315 105) rotate(6 180 200)" filter="url(#shadow)">
+        <rect width="320" height="400" rx="16" fill="#fffdf7" stroke="#d2d8cd"/>
+        <rect x="36" y="38" width="60" height="28" rx="5" fill="#dcece2"/>
+        <text x="46" y="58" fill="#286a57" font-family="sans-serif" font-size="16" font-weight="700">PDF</text>
+        <path d="M38 108H254M38 140H235" stroke="#243e39" stroke-width="12" stroke-linecap="round"/>
+        <rect x="28" y="181" width="260" height="56" rx="6" fill="#d9ef92"/>
+        <path d="M38 199H260M38 222H207M38 276H258M38 304H220M38 332H245" stroke="#96a59a" stroke-width="8"
+              stroke-linecap="round"/>
+    </g>
+    <circle cx="683" cy="407" r="82" fill="#143e36" filter="url(#shadow)"/>
+    <circle cx="670" cy="393" r="29" stroke="#e0f6ad" stroke-width="9"/>
+    <path d="M693 418L722 448" stroke="#e0f6ad" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="68" cy="584" r="5" fill="#247766"/>
+    <path d="M88 584H155" stroke="#247766" stroke-width="2"/>
+</svg>

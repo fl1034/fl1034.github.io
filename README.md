@@ -22,11 +22,12 @@ Do not double-click index.html: JSON loading needs a web server.
 
 ## Full source
 
-`source/` contains the customized Next.js/React/TypeScript template, lockfile, license, and setup instructions. To
+`website/source` contains the customized Next.js/React/TypeScript template, lockfile, license, and setup instructions.
+To
 change the design, run `npm ci` and `npm run dev` there. `npm run build` creates a new static export in `out/`.
 
 If rebuilding after editing the ready-built content, first copy `website/portfolio.json` to
-`source/public/portfolio.json`. The two copies are not automatically synchronized.
+`website/source`. The two copies are not automatically synchronized.
 
 Build, TypeScript, ESLint, content-rendering checks, and static asset checks passed. Browser visual verification was
-unavailable. See `source/docs/VALIDATION.md` for details.
+unavailable. See `website/source` for details.
