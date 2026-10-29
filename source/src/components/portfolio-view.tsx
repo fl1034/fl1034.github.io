@@ -4,6 +4,7 @@ import BlurFadeText from "@/components/magicui/blur-fade-text";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Badge} from "@/components/ui/badge";
 import {ProjectCard} from "@/components/project-card";
+import {ContactForm} from "@/components/contact-form";
 import Navbar from "@/components/navbar";
 import {ArrowDown, ArrowUpRight, GraduationCap, MapPin, Printer} from "lucide-react";
 import {emailHref, safeImage, safeWebUrl, type Portfolio} from "@/lib/portfolio";
@@ -152,6 +153,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
                         {sampleEmail &&
                             <p className="mt-2 text-xs text-muted-foreground">{contact.sampleEmailNotice}</p>}
                     </div>
+                    <ContactForm email={profile.email}/>
                     <div className="flex gap-4 flex-wrap">{profile.socialLinks.map(item => {
                         const url = safeWebUrl(item.url);
                         return url ? <a key={item.label} href={url} target="_blank" rel="noopener noreferrer"

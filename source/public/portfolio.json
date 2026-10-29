@@ -1,11 +1,11 @@
 {
   "$schema": "portfolio.schema.json",
   "profile": {
-    "name": "John Smith",
+    "name": "Feitian Li",
     "role": "Computer System Technology student",
     "headline": "Seeking a junior developer role",
-    "location": "Saskatoon, Saskatchewan, Canada",
-    "email": "john.smith@example.com",
+    "location": "Regina, Saskatchewan, Canada",
+    "email": "fl1034nk@gmail.com",
     "photo": {
       "src": "assets/images/photo-placeholder.svg",
       "alt": "Professional photo placeholder",
@@ -54,181 +54,127 @@
       ]
     }
   ],
-  "projectsIntro": "Five AI projects, from guided applications to planned final-year capstones. Each includes the problem, my role, and the skills it develops.",
-  "sampleNotice": "Sample student portfolio. Guided-project narratives are illustrative; the two capstones are planned. Project images are concept illustrations, and live-demo links have not been supplied.",
+  "projectsIntro": "Three personal projects with live demos, followed by two planned capstones.",
+  "sampleNotice": "The first three projects include screenshots and live demos. Internet Pulse is shown in simulation mode, and SQL/REPL uses sample data. The two capstones are planned.",
   "projects": [
     {
       "id": "multipdf",
-      "name": "MultiPDF Study Assistant",
-      "status": "Guided project",
-      "description": "Ask questions across several PDFs and inspect the passages supporting each answer.",
+      "name": "Internet Pulse",
+      "status": "Personal project",
+      "description": "Explore internet latency and reachability measurements across an interactive globe and world map.",
       "source": {
-        "label": "Alejandro AO’s MultiPDF tutorial",
-        "url": "https://github.com/alejandro-ao/ask-multiple-pdfs"
+        "label": "",
+        "url": ""
       },
       "image": {
-        "src": "assets/images/multipdf.svg",
-        "alt": "Concept illustration of PDF documents and a search lens"
+        "src": "assets/images/internet-pulse.webp",
+        "alt": "Internet Pulse globe displaying simulated network measurements and latency statistics"
       },
       "technologies": [
-        "Python",
-        "Streamlit",
-        "PyPDF2",
-        "LangChain",
-        "OpenAI embeddings",
-        "FAISS"
+        "JavaScript",
+        "Interactive maps",
+        "RIPE Atlas"
       ],
-      "demoUrl": "",
+      "demoUrl": "https://fl1034.github.io/Map-View/",
       "roleAndChallenge": [
         {
-          "label": "Role",
-          "text": "Recreated the guided application and added source-inspection features."
+          "label": "Feature",
+          "text": "Switch between a globe and world map to explore internet measurements."
         },
         {
-          "label": "Challenge",
-          "text": "Text chunks sometimes separated explanations from important context."
-        },
-        {
-          "label": "Response",
-          "text": "Compared chunk sizes and retained document/page metadata."
-        },
-        {
-          "label": "Response",
-          "text": "Displayed retrieved passages so users could verify answers."
+          "label": "Feature",
+          "text": "Filter observations by probe region and latency, and inspect measurement details."
         }
       ],
       "reflection": [
         {
-          "label": "Importance",
-          "text": "Makes generated answers easier to check against their sources."
+          "label": "Design consideration",
+          "text": "Connection arcs show measurement endpoints rather than physical cable routes."
         },
         {
-          "label": "Difficulty",
-          "text": "Extraction and retrieval errors can affect the entire response."
-        },
-        {
-          "label": "Skills",
-          "text": "Python programming, analytical thinking, and debugging."
-        },
-        {
-          "label": "Skills",
-          "text": "Explaining AI limitations clearly and taking initiative beyond a tutorial."
+          "label": "Design consideration",
+          "text": "Live coverage depends on available probes; simulation offers another way to explore the visualization."
         }
       ]
     },
     {
       "id": "chatbot",
-      "name": "LLM Chatbot",
-      "status": "Guided project",
-      "description": "A conversational interface with conversation history and understandable error recovery.",
+      "name": "5D Chess \u00b7 AI Spectator",
+      "status": "Personal project",
+      "description": "Explore chess across branching timelines, navigate alternate game continuations, and configure AI players.",
       "source": {
-        "label": "Streamlit’s chatbot example",
-        "url": "https://github.com/streamlit/llm-examples/blob/main/Chatbot.py"
+        "label": "",
+        "url": ""
       },
       "image": {
-        "src": "assets/images/chatbot.svg",
-        "alt": "Concept illustration of two conversation bubbles"
+        "src": "assets/images/5d-chess.webp",
+        "alt": "5D Chess in its dark theme showing the two initial boards"
       },
       "technologies": [
-        "Python",
-        "Streamlit",
-        "OpenAI API",
-        "Session state",
-        "pytest"
+        "JavaScript",
+        "WebAssembly",
+        "AI models"
       ],
-      "demoUrl": "",
+      "demoUrl": "https://fl1034.github.io/5dchess_engine_AI/",
       "roleAndChallenge": [
         {
-          "label": "Role",
-          "text": "Adapted the starter chatbot and refined its interaction behaviour."
+          "label": "Feature",
+          "text": "Navigate boards and game continuations with move history, undo, and redo."
         },
         {
-          "label": "Challenge",
-          "text": "Failed requests and retries could duplicate conversation messages."
-        },
-        {
-          "label": "Response",
-          "text": "Traced state updates and corrected when messages entered the history."
-        },
-        {
-          "label": "Response",
-          "text": "Simulated API failures to check recovery consistently."
+          "label": "Feature",
+          "text": "Configure separate AI players, inspect suggested moves, and import or export games."
         }
       ],
       "reflection": [
         {
-          "label": "Importance",
-          "text": "Helps users understand failures and continue their conversation."
+          "label": "Design consideration",
+          "text": "Branching timelines turn game navigation and visualization into part of the strategy."
         },
         {
-          "label": "Difficulty",
-          "text": "Each state change can affect later messages and retries."
-        },
-        {
-          "label": "Skills",
-          "text": "API integration, logical thinking, and systematic testing."
-        },
-        {
-          "label": "Skills",
-          "text": "Persistence during debugging and clear user communication."
+          "label": "Design consideration",
+          "text": "AI match controls expose request limits and reported usage alongside player configuration."
         }
       ]
     },
     {
       "id": "penguins",
-      "name": "Penguin Prediction App",
-      "status": "Guided project",
-      "description": "Predict penguin species from measurements and explain the prediction’s limitations.",
+      "name": "SQL/REPL",
+      "status": "Personal project",
+      "description": "Query CSV, Parquet, and JSON with DuckDB in the browser, explore results, and build charts without a backend.",
       "source": {
-        "label": "Data Professor’s penguin classifier",
-        "url": "https://github.com/dataprofessor/streamlit_freecodecamp/tree/main/app_8_classification_penguins"
+        "label": "",
+        "url": ""
       },
       "image": {
-        "src": "assets/images/penguins.svg",
-        "alt": "Concept illustration of a penguin beside a classification plot"
+        "src": "assets/images/sql-repl.webp",
+        "alt": "SQL/REPL dark editor with highlighted analytics SQL and twelve query result rows"
       },
       "technologies": [
-        "Python",
-        "pandas",
-        "Streamlit",
-        "scikit-learn",
-        "RandomForestClassifier"
+        "SQL",
+        "DuckDB",
+        "WebAssembly",
+        "Browser file access"
       ],
-      "demoUrl": "",
+      "demoUrl": "https://fl1034.github.io/sql-repl/",
       "roleAndChallenge": [
         {
-          "label": "Role",
-          "text": "Recreated the interface and added preprocessing and evaluation refinements."
+          "label": "Feature",
+          "text": "Write, run, format, and save SQL queries in a browser workspace."
         },
         {
-          "label": "Challenge",
-          "text": "Uploaded inputs could use a different column order from training data."
-        },
-        {
-          "label": "Response",
-          "text": "Introduced shared preprocessing and an expected feature schema."
-        },
-        {
-          "label": "Response",
-          "text": "Checked predictions using data kept separate from model training."
+          "label": "Feature",
+          "text": "Work with local data files and download query results."
         }
       ],
       "reflection": [
         {
-          "label": "Importance",
-          "text": "A convincing prediction interface still needs sound evaluation."
+          "label": "Design consideration",
+          "text": "Local-first analysis brings data exploration into the browser without a server or signup."
         },
         {
-          "label": "Difficulty",
-          "text": "Training and prediction must apply the same data transformations."
-        },
-        {
-          "label": "Skills",
-          "text": "Data analysis, testing, debugging, and attention to detail."
-        },
-        {
-          "label": "Skills",
-          "text": "Recognizing uncertainty and explaining model limitations responsibly."
+          "label": "Design consideration",
+          "text": "Queries, tabular results, and charts connect data preparation with interpretation."
         }
       ]
     },
@@ -238,7 +184,7 @@
       "status": "Planned capstone",
       "description": "A planned assistant for searching engineering runbooks and displaying supporting sources.",
       "source": {
-        "label": "Azure’s document-search assistant",
+        "label": "Azure\u2019s document-search assistant",
         "url": "https://github.com/Azure-Samples/azure-search-openai-demo"
       },
       "image": {
@@ -326,7 +272,7 @@
         },
         {
           "label": "Planned response",
-          "text": "Share preprocessing logic and validate the API’s inputs."
+          "text": "Share preprocessing logic and validate the API\u2019s inputs."
         },
         {
           "label": "Planned response",
@@ -450,7 +396,7 @@
   "contact": {
     "invitation": "I welcome junior development opportunities, student collaborations, and constructive feedback on my projects.",
     "availability": "Interested in graduate opportunities aligned with diploma completion in 2027.",
-    "sampleEmailNotice": "Sample email address — replace it with your own in portfolio.json.",
+    "sampleEmailNotice": "Sample email address \u2014 replace it with your own in portfolio.json.",
     "formNote": "Prepare a draft for review. Nothing is sent automatically."
   },
   "site": {
@@ -480,12 +426,12 @@
       "roleChallenge": "My role & challenge faced",
       "reflection": "Reflection",
       "demo": "Live demo",
-      "demoPending": "Live demo — link pending",
+      "demoPending": "Live demo \u2014 link pending",
       "source": "Based on",
       "conceptImage": "Concept illustration",
       "viewProjects": "View my projects",
-      "viewResume": "View résumé",
-      "printResume": "Print / save résumé as PDF",
+      "viewResume": "View r\u00e9sum\u00e9",
+      "printResume": "Print / save r\u00e9sum\u00e9 as PDF",
       "education": "Education",
       "careerGoal": "Career goal",
       "interests": "Outside coursework",
@@ -505,16 +451,16 @@
       "close": "Close",
       "draftReady": "Draft prepared. No message has been sent.",
       "copied": "Draft copied. No message has been sent.",
-      "copyFallback": "Draft selected. Use your device’s Copy command.",
+      "copyFallback": "Draft selected. Use your device\u2019s Copy command.",
       "whitespaceError": "Enter a name, subject, and message; spaces alone are not enough.",
       "sampleDraftNotice": "This portfolio uses a sample address. You can copy this draft; no message has been sent.",
       "realDraftNotice": "Review the draft, then open your email app to send it. No message has been sent yet.",
       "about": "About",
       "skills": "Skills",
       "projects": "Projects",
-      "resume": "Résumé",
+      "resume": "R\u00e9sum\u00e9",
       "contact": "Contact"
     },
-    "footer": "Student portfolio · 2026"
+    "footer": "Student portfolio \u00b7 2026"
   }
 }

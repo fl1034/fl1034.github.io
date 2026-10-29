@@ -45,6 +45,8 @@
 }
 
 :root {
+    --page-blue: oklch(0.89 0.035 245 / 55%);
+    --page-teal: oklch(0.93 0.035 175 / 45%);
     --radius: 0.625rem;
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
@@ -80,6 +82,8 @@
 }
 
 .dark {
+    --page-blue: oklch(0.32 0.04 255 / 45%);
+    --page-teal: oklch(0.30 0.035 190 / 30%);
     --background: oklch(0.18 0 0);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);
@@ -244,6 +248,11 @@ html {
 
 body {
     overflow-wrap: anywhere;
+    background-image:
+        radial-gradient(ellipse at 0% 0%, var(--page-blue), transparent 65%),
+        radial-gradient(ellipse at 100% 100%, var(--page-teal), transparent 65%);
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
 }
 
 a, button {
