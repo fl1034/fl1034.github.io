@@ -24,7 +24,7 @@ for (const card of doc.querySelectorAll(".project-card")) {
     assert.equal(card.querySelectorAll("[data-project-section=artifacts] a").length, 1);
     assert.ok(card.querySelector("img")?.getAttribute("alt"));
 }
-assert.equal(doc.querySelectorAll('a[href^="mailto:"]').length, data.profile.email.endsWith("@example.com") ? 0 : 1, "Contact link matches the configured address");
+assert.equal(doc.querySelectorAll('a[href^="mailto:"]').length, data.profile.email.endsWith("@example.com") ? 0 : 2, "Contact link matches the configured address");
 const changed = structuredClone(data);
 changed.profile.name = "Jordan Student";
 changed.profile.email = "jordan@portfolio.dev";

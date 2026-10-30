@@ -5,8 +5,9 @@ import BlurFadeText from "@/components/magicui/blur-fade-text";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {ProjectCard} from "@/components/project-card";
 import {ContactForm} from "@/components/contact-form";
+import {Tooltip, TooltipTrigger, TooltipContent} from "@/components/ui/tooltip";
 import Navbar from "@/components/navbar";
-import {ArrowDown, ArrowUpRight, MapPin} from "lucide-react";
+import {ArrowDown, ArrowUpRight, MapPin, Github, Mail, Database} from "lucide-react";
 import {emailHref, safeImage, safeWebUrl, type Portfolio} from "@/lib/portfolio";
 
 export function PortfolioView({data}: { data: Portfolio }) {
@@ -16,6 +17,9 @@ export function PortfolioView({data}: { data: Portfolio }) {
     const initials = profile.name.split(/\s+/).map(s => s[0]).slice(0, 2).join("");
     const sampleEmail = profile.email.endsWith("@example.com");
     const mail = emailHref(profile.email);
+    const github = profile.socialLinks.find(link => link.label === "GitHub");
+    const githubUrl = github && safeWebUrl(github.url);
+    const languageIcons: Record<string, string[]> = skills.languageIcons;
     return <>
         <main id="main" className="min-h-dvh flex flex-col gap-16 relative">
             <section id="hero" className="scroll-mt-8">
@@ -28,8 +32,24 @@ export function PortfolioView({data}: { data: Portfolio }) {
                             <p className="text-lg text-foreground font-medium leading-relaxed">{profile.role}</p>
                             <p className="text-muted-foreground text-lg leading-relaxed">{profile.headline}</p>
                         </BlurFade>
-                        <BlurFade delay={0.12}><p className="text-sm text-muted-foreground flex items-start gap-1.5">
-                            <MapPin aria-hidden="true" className="size-3.5 mt-0.5 shrink-0"/>{profile.location}</p>
+                        <BlurFade delay={0.12} className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                            <p className="text-sm text-muted-foreground flex items-center gap-1.5">
+                                <MapPin aria-hidden="true" className="size-3.5 shrink-0"/>{profile.location}
+                            </p>
+                            <div className="flex items-center gap-1">
+                                {githubUrl && <Tooltip><TooltipTrigger asChild>
+                                    <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={github.label}
+                                       className="inline-flex size-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+                                        <Github className="size-4" aria-hidden="true"/>
+                                    </a>
+                                </TooltipTrigger><TooltipContent>{github.label}</TooltipContent></Tooltip>}
+                                {!sampleEmail && mail && <Tooltip><TooltipTrigger asChild>
+                                    <a href={mail} aria-label={`${l.contactEmail}${ui.format.labelSeparator}${profile.email}`}
+                                       className="inline-flex size-9 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+                                        <Mail className="size-4" aria-hidden="true"/>
+                                    </a>
+                                </TooltipTrigger><TooltipContent>{profile.email}</TooltipContent></Tooltip>}
+                            </div>
                         </BlurFade>
                         <BlurFade delay={0.16} className="flex flex-wrap gap-3 pt-3">
                             <a href="#projects"
@@ -101,8 +121,16 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 </article>
                 {skills.groups.map(group => <BlurFade key={group.name} inView className="space-y-3">
                     <h3 className="text-sm font-semibold">{group.name}</h3>
-                    <ul className="flex flex-wrap gap-2">{group.items.map(item => <li key={item}><span
-                        className="border bg-background border-border ring-2 ring-border/20 rounded-xl min-h-8 px-3 py-1 inline-flex items-center text-sm font-medium">{item}</span>
+                    <ul className="flex flex-wrap gap-3">{group.items.map(item => <li key={item}>
+                        {languageIcons[item] ? <Tooltip><TooltipTrigger asChild>
+                            <span tabIndex={0} className="inline-flex items-center gap-2 px-1 py-1 text-sm font-medium rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+                                <span className="inline-flex items-center gap-1 rounded-md bg-white p-1.5">
+                                    {languageIcons[item].length ? languageIcons[item].map(src => <img key={src} src={safeImage(src)} alt="" aria-hidden="true" width="24" height="24" className="size-6 object-contain"/>) : <Database className="size-6 text-blue-600" aria-hidden="true"/>}
+                                </span>
+                                {item}
+                            </span>
+                        </TooltipTrigger><TooltipContent>{item}</TooltipContent></Tooltip> : <span
+                            className="border bg-background border-border ring-2 ring-border/20 rounded-xl min-h-8 px-3 py-1 inline-flex items-center text-sm font-medium">{item}</span>}
                     </li>)}</ul>
                 </BlurFade>)}
                 <div className="space-y-4">
