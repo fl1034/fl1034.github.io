@@ -56,7 +56,7 @@ for (const text of [editedCopy.ui.projectsHeading, editedCopy.ui.footer.creditPr
     assert.ok(editedDoc.querySelector('main')?.textContent?.includes(text), `Edited copy is rendered: ${text}`);
 }
 assert.ok(editedDoc.querySelector('[aria-label="Edited theme control"]'));
-assert.ok(editedDoc.querySelector('#about .font-medium')?.textContent?.includes(" → "));
+assert.ok(editedDoc.querySelector('#hero a[href^="mailto:"]')?.getAttribute('aria-label')?.includes(" → "));
 assert.equal(formatText("{message} / {name}", {message: "$& {name}", name: "Alex"}), "$& {name} / Alex");
 console.log("Passed: editable UI copy, decorative separators, accessibility labels, literal template input.");
 

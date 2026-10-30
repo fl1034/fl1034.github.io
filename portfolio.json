@@ -23,18 +23,9 @@
     ]
   },
   "about": {
-    "introduction": "I am a Computer System Technology student exploring how software can make complex systems interactive—from folding paper to querying data and navigating branching chess timelines.",
+    "introduction": "I got into programming because I wanted to understand the software that keeps the world running: compilers, operating systems, and database engines. That curiosity drew me to computer science, and I’m now studying Computer System Technology at Saskatchewan Polytechnic. I want to understand these systems deeply enough to build fast, efficient software of my own.",
     "story": [
-      "My projects often start with curiosity about a field I have not worked in before. Implementing a paper-folding solver introduced me to finite element methods; building a browser database workspace let me explore interpreter-adjacent work.",
-      "I use existing tools and research as foundations, then focus on the parts I want to understand and build. Small experiments, existing tests, and realistic scope help me turn those ideas into working demos."
-    ],
-    "careerGoal": "I am looking for a junior development role where I can contribute code, API integrations, tests, and documentation while learning through code review.",
-    "interests": [
-      "Recreational badminton",
-      "Local hiking",
-      "Coding challenges",
-      "Open-source learning tools",
-      "Accessible interfaces"
+      "AI has made that curiosity even more exciting. Being able to describe the mathematical behavior of a program and work with AI to turn it into code lets me spend less time on routine implementation and explore more ambitious ideas. I’m interested in how far that can take me, especially in building high-performance software."
     ]
   },
   "education": [
@@ -405,7 +396,6 @@
       "viewResume": "Download résumé (PDF)",
       "education": "Education",
       "careerGoal": "Career goal",
-      "interests": "Outside coursework",
       "certifications": "Certifications",
       "backToTop": "Back to top",
       "contactEmail": "Email",

@@ -78,22 +78,11 @@
           "items": {
             "type": "string"
           }
-        },
-        "careerGoal": {
-          "type": "string"
-        },
-        "interests": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         }
       },
       "required": [
         "introduction",
-        "story",
-        "careerGoal",
-        "interests"
+        "story"
       ]
     },
     "education": {
@@ -535,9 +524,6 @@
             "careerGoal": {
               "type": "string"
             },
-            "interests": {
-              "type": "string"
-            },
             "certifications": {
               "type": "string"
             },
@@ -589,7 +575,6 @@
             "viewResume",
             "education",
             "careerGoal",
-            "interests",
             "certifications",
             "backToTop",
             "contactEmail",

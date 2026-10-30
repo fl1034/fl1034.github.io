@@ -75,9 +75,6 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 <BlurFade delay={0.16} className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>{about.introduction}</p>
                     {about.story.map((text, i) => <p key={i}>{text}</p>)}
-                    <p>{about.careerGoal}</p>
-                    <p className="text-sm"><span
-                        className="font-medium text-foreground">{l.interests}{ui.format.labelSeparator}</span>{about.interests.join(ui.format.listSeparator)}</p>
                 </BlurFade>
             </section>
             <section id="education" className="scroll-mt-8 space-y-6">
