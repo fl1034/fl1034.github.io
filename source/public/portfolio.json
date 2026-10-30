@@ -62,7 +62,7 @@
     {
       "id": "origami",
       "name": "Origami Lab",
-      "description": "Explore 25 paper studies in 3D, adjust their folds, and inspect how a flat sheet becomes a structure.",
+      "description": "An interactive paper-folding playground where flat crease patterns turn into 3D shapes.",
       "source": {
         "label": "Amanda Ghassaei’s Origami Simulator",
         "url": "https://origamisimulator.org/"
@@ -82,28 +82,24 @@
       "roleAndChallenge": [
         {
           "label": "",
-          "text": "I implemented a paper-folding solver from a published finite element method. The numerical method came from research; translating it into a working solver was my contribution, and FEM was new to me."
+          "text": "The folding physics was the part I most wanted to understand. I implemented the solver from a published finite element method, using small AI-assisted numerical experiments to get comfortable with mathematics I hadn’t used before."
         },
         {
           "label": "",
-          "text": "Before tackling the full origami problem, I used AI to build small numerical experiments to check my implementation. Roughly 30% of my test cases converged on my laptop but failed on my phone. Reading the documentation led me to a loss of precision in FP16 storage. Correcting that issue resolved the affected cases."
+          "text": "One stubborn bug only appeared on my phone. Tracking it down to FP16 storage precision finally got the same folds converging on both devices."
         }
       ],
       "reflection": [
         {
-          "label": "Takeaway",
-          "text": "This project taught me to validate unfamiliar mathematics in small steps and to investigate numerical storage when the same implementation behaves differently across devices."
-        },
-        {
-          "label": "In the demo",
-          "text": "Captured from the live app, the screenshot shows a Miura pattern at 65% fold. Adjust folds and inspect crease geometry in the demo to explore the solver’s interactive output."
+          "label": "",
+          "text": "The demo brings that solver into a hands-on view of paper and creases. Building it taught me how much a small numerical detail can change what you see on screen."
         }
       ]
     },
     {
       "id": "penguins",
       "name": "SQL/REPL",
-      "description": "Query CSV, Parquet, and JSON with DuckDB in the browser, explore results, and build charts without a backend.",
+      "description": "A small browser-based SQL workspace for querying local files and exploring the results.",
       "source": {
         "label": "",
         "url": ""
@@ -122,28 +118,24 @@
       "roleAndChallenge": [
         {
           "label": "",
-          "text": "I wanted to explore work adjacent to compilers and interpreters within a limited timeframe. I built the UI and a changeset algorithm for a miniature in-browser database, building on an existing codebase rather than writing the SQL engine."
+          "text": "I’d wanted to try something close to a compiler or interpreter, and a SQL tool felt like a manageable place to start. With DuckDB handling queries, I focused on the interface and how the database keeps track of changes."
         },
         {
           "label": "",
-          "text": "To prioritize compute and query efficiency, the algorithm computes differences against the original database snapshot instead of computing an update every time. My implementation passed the original codebase’s insert, edit, and deletion tests."
+          "text": "I built a changeset algorithm around the original database snapshot, with compute and query costs in mind. It passed the existing tests for inserts, edits, and deletions."
         }
       ],
       "reflection": [
         {
-          "label": "Takeaway",
-          "text": "The project gave me experience designing state changes around a clear baseline and checking behavior against existing tests. Efficiency drove the design; I have not established a measured speedup."
-        },
-        {
-          "label": "In the demo",
-          "text": "The live workspace demonstrates the editor and browser-based querying. Its screenshot uses an AI-assisted sample analytics query to show syntax highlighting and tabular results."
+          "label": "",
+          "text": "Putting the editor and results side by side made the project feel complete: a place to try an idea and see what comes back. The most interesting work for me was underneath that interface, figuring out how to represent changes cleanly."
         }
       ]
     },
     {
       "id": "chatbot",
       "name": "5D Chess · AI Spectator",
-      "description": "Explore chess across branching timelines, navigate alternate game continuations, and configure AI players.",
+      "description": "AI players take on chess with time travel and branching timelines.",
       "source": {
         "label": "",
         "url": ""
@@ -161,28 +153,24 @@
       "roleAndChallenge": [
         {
           "label": "",
-          "text": "Discovering that 5D chess with time travel was a real game, and remembering AlphaGo, made me curious about letting AI play it. I adapted an open-source game and rewrote its interface to supply game state to AI players instead of human players."
+          "text": "Once I discovered that 5D chess was a real game, I wanted to see what AI would make of it. I adapted an open-source game to give models the rules and board state, along with limited retrieval to help them decide what to do next."
         },
         {
           "label": "",
-          "text": "Because the models were not specifically trained for this game, I supplied its rules and current state, with retrieval support limited to two queries per turn, each under 50 ms. I observed time travel and timeline branching in roughly 80% of my test cases. Token costs limited the number of completed games."
+          "text": "Seeing the models use time travel and create new timelines was the payoff. Full games were expensive in tokens, so most of my testing focused on shorter runs."
         }
       ],
       "reflection": [
         {
-          "label": "Takeaway",
-          "text": "The experiment made inference cost a practical constraint on testing. Exercising unusual game mechanics is a useful result, but it does not establish strong play or reliable completion of full matches."
-        },
-        {
-          "label": "In the demo",
-          "text": "The screenshot captures the initial boards. Open the demo to explore AI configuration, navigate game continuations, and inspect branching timelines."
+          "label": "",
+          "text": "The spectator view lets you follow those branching boards and experiment with AI players. It also made the cost of an AI experiment very tangible: each extra turn had to be worth running."
         }
       ]
     },
     {
       "id": "molecular",
       "name": "Molecular Explorer",
-      "description": "Explore biological molecules in an interactive 3D viewer, from hemoglobin and DNA to proteins and RNA.",
+      "description": "A 3D viewer for exploring protein structures and other biological molecules.",
       "source": {
         "label": "",
         "url": ""
@@ -201,28 +189,24 @@
       "roleAndChallenge": [
         {
           "label": "",
-          "text": "I initially wanted to create a visual library of organic chemistry reactions. In the sources I explored, structural-formula images were common, but conveniently usable spatial data was not. Collecting that data at the intended scale was unrealistic."
+          "text": "This began as a much bigger idea: a visual library of organic chemistry reactions. The sources I found mostly offered structural diagrams, and gathering usable spatial data would have become a project of its own."
         },
         {
           "label": "",
-          "text": "I narrowed the project to displaying existing protein structures. This was a scope and data-feasibility decision: the resulting Mol*-based viewer displays molecular structures; it does not simulate protein folding or chemical reactions."
+          "text": "I narrowed the idea to exploring existing structures with Mol*. The result keeps the part that interested me most—being able to rotate a molecule and get a feel for its shape."
         }
       ],
       "reflection": [
         {
-          "label": "Takeaway",
-          "text": "Investigating the available data changed what I could reasonably deliver. Narrowing the idea preserved its visual exploration goal while avoiding an open-ended data collection effort."
-        },
-        {
-          "label": "In the demo",
-          "text": "The screenshot captures a loaded structure in the live viewer. Select examples, rotate and zoom, or import molecular files to explore the revised project’s focus on existing structures."
+          "label": "",
+          "text": "Changing direction helped me finish something useful. The viewer is a reminder to explore the available data early, while there’s still room for the idea to change."
         }
       ]
     },
     {
       "id": "multipdf",
       "name": "Internet Pulse",
-      "description": "Explore internet latency and reachability measurements across an interactive globe and world map.",
+      "description": "Internet measurements mapped onto an interactive globe and world map.",
       "source": {
         "label": "",
         "url": ""
@@ -240,21 +224,13 @@
       "roleAndChallenge": [
         {
           "label": "",
-          "text": "I made Internet Pulse as an exploration of data visualization, an area I had not worked in before."
-        },
-        {
-          "label": "",
-          "text": "The project presents network measurements through a globe and world map, with filters for probe region and latency. Its scope is a focused visualization experiment."
+          "text": "I made Internet Pulse to try data visualization for the first time. Network measurements gave me a way to explore how geography, color, and filtering can make a dataset easier to navigate."
         }
       ],
       "reflection": [
         {
-          "label": "Takeaway",
-          "text": "The view needs context: arcs connect measurement endpoints rather than physical cable routes, and live coverage depends on available probes."
-        },
-        {
-          "label": "In the demo",
-          "text": "The screenshot was captured from the live app in simulation mode. Use the demo to switch views and inspect measurements; the image illustrates the interface rather than current internet conditions."
+          "label": "",
+          "text": "The screenshot shows the demo in simulation mode. One detail that matters when reading the map: the arcs connect measurement endpoints, not physical cables. That distinction is part of learning to make a visualization understandable as well as interesting."
         }
       ]
     }

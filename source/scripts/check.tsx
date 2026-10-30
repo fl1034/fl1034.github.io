@@ -20,8 +20,8 @@ const doc = render(data);
 assert.equal(doc.querySelectorAll(".project-card").length, 5);
 for (const card of doc.querySelectorAll(".project-card")) {
     assert.equal(card.querySelectorAll("[data-project-section]").length, 5);
-    for (const key of ["role", "reflection"]) assert.ok(card.querySelectorAll(`[data-project-section=${key}] p`).length > 1);
-    assert.equal(card.querySelectorAll("[data-project-section=artifacts] li").length, 1);
+    for (const key of ["role", "reflection"]) assert.ok(card.querySelectorAll(`[data-project-section=${key}] p`).length >= 1);
+    assert.equal(card.querySelectorAll("[data-project-section=artifacts] a").length, 1);
     assert.ok(card.querySelector("img")?.getAttribute("alt"));
 }
 assert.equal(doc.querySelectorAll('a[href^="mailto:"]').length, data.profile.email.endsWith("@example.com") ? 0 : 1, "Contact link matches the configured address");
@@ -41,7 +41,7 @@ assert.equal(safeWebUrl("javascript:alert(1)"), undefined);
 assert.equal(safeImage("//untrusted.example/image.png"), undefined);
 assert.equal(emailHref("hello@example.com?bcc=other@example.com"), undefined);
 assert.throws(() => validatePortfolio({profile: {}}));
-console.log("Passed: five project sections, multiple bullets, complete long content, JSON email/name updates, navigation, demo links, URL safeguards, invalid content.");
+console.log("Passed: five project sections, readable narratives, complete long content, JSON email/name updates, navigation, demo links, URL safeguards, invalid content.");
 
 const editedCopy = structuredClone(data);
 editedCopy.ui.projectsHeading = "Edited project heading";
@@ -56,7 +56,7 @@ for (const text of [editedCopy.ui.projectsHeading, editedCopy.ui.footer.creditPr
     assert.ok(editedDoc.querySelector('main')?.textContent?.includes(text), `Edited copy is rendered: ${text}`);
 }
 assert.ok(editedDoc.querySelector('[aria-label="Edited theme control"]'));
-assert.ok(editedDoc.querySelector('.project-card strong')?.textContent?.includes(" → "));
+assert.ok(editedDoc.querySelector('#about .font-medium')?.textContent?.includes(" → "));
 assert.equal(formatText("{message} / {name}", {message: "$& {name}", name: "Alex"}), "$& {name} / Alex");
 console.log("Passed: editable UI copy, decorative separators, accessibility labels, literal template input.");
 

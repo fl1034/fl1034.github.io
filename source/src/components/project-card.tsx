@@ -28,23 +28,18 @@ export function ProjectCard({project, labels, labelSeparator}: { project: Projec
                     </li>)}</ul>
             </section>
             <section data-project-section="artifacts" className="space-y-2">
-                <h4 className="text-xs font-semibold tracking-wide uppercase">{labels.artifacts}</h4>
-                <ul className="project-bullets">
-                    <li>{demo ?
+                <div>{demo ?
                         <a className="inline-flex items-center gap-1 underline underline-offset-4 text-foreground"
                            href={demo} target="_blank" rel="noopener noreferrer">{labels.demo}<ArrowUpRight
-                            className="size-3.5" aria-hidden="true"/></a> : <span>{labels.demoPending}</span>}</li>
-                </ul>
+                            className="size-3.5" aria-hidden="true"/></a> : <span>{labels.demoPending}</span>}</div>
             </section>
             <section data-project-section="role" className="space-y-3">
-                <h4 className="text-xs font-semibold tracking-wide uppercase">{labels.roleChallenge}</h4>
                 <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">{project.roleAndChallenge.map((item, i) => <p key={i}>{item.label && <strong
                     className="font-medium text-foreground">{item.label}{labelSeparator}</strong>}{item.text}</p>)}</div>
             </section>
             <section data-project-section="reflection" className="space-y-3">
-                <h4 className="text-xs font-semibold tracking-wide uppercase">{labels.reflection}</h4>
-                <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">{project.reflection.map((item, i) => <p key={i}><strong
-                    className="font-medium text-foreground">{item.label}{labelSeparator}</strong>{item.text}</p>)}</div>
+                <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">{project.reflection.map((item, i) => <p key={i}>{item.label && <strong
+                    className="font-medium text-foreground">{item.label}{labelSeparator}</strong>}{item.text}</p>)}</div>
             </section>
         </div>
     </article>;

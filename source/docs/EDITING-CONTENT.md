@@ -59,7 +59,9 @@ The export command does not perform Git operations.
 Projects are ordered in the JSON. Each keeps five content groups: description,
 technologies, demo artifact, contribution/challenge narrative, and reflection.
 `roleAndChallenge` paragraphs use an empty `label` for uninterrupted prose;
-`reflection` labels introduce the takeaway and explain the demo artifact.
+`reflection` also uses an empty label, so each card reads as a continuous story.
+Contribution and reflection headings are not displayed; technologies and demo
+links remain easy to scan.
 Write context, your contribution, actions, and outcomes naturally—STAR headings
 are not required. Keep approximate observations distinct from measured benchmarks.
 
