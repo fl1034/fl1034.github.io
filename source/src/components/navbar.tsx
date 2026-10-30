@@ -5,6 +5,8 @@ import {Separator} from "@/components/ui/separator";
 import {Tooltip, TooltipArrow, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip";
 import {Home, FolderCode, Code2, Mail, User, FileText} from "lucide-react";
 
+import type {Portfolio} from "@/lib/portfolio";
+
 const icons: Record<string, typeof Home> = {
     hero: Home,
     about: User,
@@ -13,8 +15,8 @@ const icons: Record<string, typeof Home> = {
     resume: FileText,
     contact: Mail
 };
-export default function Navbar({items}: { items: { id: string; label: string }[] }) {
-    return <nav aria-label="Portfolio navigation"
+export default function Navbar({items, copy}: { items: { id: string; label: string }[]; copy: Portfolio["ui"]["navigation"] }) {
+    return <nav aria-label={copy.label}
                 className="portfolio-dock pointer-events-none fixed inset-x-0 bottom-4 z-30">
         <Dock magnification={48}
               className="z-50 pointer-events-auto relative h-14 p-2 w-fit mx-auto flex gap-2 border bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5">
@@ -34,7 +36,7 @@ export default function Navbar({items}: { items: { id: string; label: string }[]
             <Separator orientation="vertical" className="h-2/3 m-auto w-px bg-border"/>
             <DockIcon
                 className="rounded-3xl size-full bg-background border border-border text-muted-foreground hover:text-foreground"><ModeToggle
-                className="size-full"/></DockIcon>
+                className="size-full" label={copy.themeToggle}/></DockIcon>
         </Dock>
     </nav>;
 }

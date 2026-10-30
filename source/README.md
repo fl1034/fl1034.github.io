@@ -1,29 +1,20 @@
-# John Smith · Magic UI Portfolio
+# Portfolio · Magic UI
 
 A customized version of the real [Magic UI Portfolio](https://github.com/magicuidesign/portfolio), upstream commit
 `5ef12e4c8bd0de3e22e89c2181ee77a35925ec8b`. The original MIT license is preserved in `LICENSE`. Template provenance is
 in `TEMPLATE-SOURCE.json` and the original README is in `docs/UPSTREAM-README.md`.
 
-## Edit the content
+## Edit all site text
 
-**All personal information is in `public/portfolio.json`.** Do not edit the JSX to change your name, email, education,
-skills, or projects.
+Edit **`public/portfolio.json`** (repository path: **`source/public/portfolio.json`**).
+This is the single editable source for site copy. `public/portfolio.schema.json`
+provides WebStorm completion and required-field validation. See
+[`docs/EDITING-CONTENT.md`](docs/EDITING-CONTENT.md) for the field guide and workflow.
 
-- `profile.email` controls the displayed email, contact link, and printed résumé. The sample `@example.com` address is
-  deliberately displayed without an active email link. Replace it with your address to enable the link.
-- `profile.photo.src` selects your photo. Put the image in `public/assets/images`, update the relative path, and change
-  its alt text/caption. The supplied image is a placeholder.
-- `profile.socialLinks` contains GitHub and LinkedIn URLs. Empty links are hidden.
-- Each project has a name/description, technologies, one live-demo artifact, role/challenge bullets, and reflection
-  bullets. Set each `demoUrl` to your own published demo. An empty URL displays “link pending.” Upstream repositories
-  are credited as learning sources, not presented as John's own repositories.
-- The two advanced capstones remain marked as planned. The guided project narratives are sample content.
-- Paragraphs and bullets grow naturally; the cards do not truncate text.
-- Keep JSON commas and double quotes valid. `public/portfolio.schema.json` provides editor assistance.
-
-The site fetches this JSON at runtime. **In the ready-built website, edit `../portfolio.json`; no rebuild is needed
-for content changes.** Treat the source and built JSON copies as alternative workflows: if rebuilding later, copy your
-latest JSON back to `public/portfolio.json` first.
+Run `npm run export:site` after editing. This builds the site and refreshes the
+published files in the repository root, including the generated `portfolio.json`.
+Do not edit both JSON copies separately. `npm run dev` reads the source public JSON;
+refresh the browser after an edit. Restart dev to refresh build-time shell copy.
 
 ## Develop and build
 

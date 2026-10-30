@@ -4,7 +4,7 @@ import {ArrowUpRight} from "lucide-react";
 import {safeImage, safeWebUrl, type Project, type Portfolio} from "@/lib/portfolio";
 
 /** Expanded from the original Magic UI ProjectCard; content is never truncated. */
-export function ProjectCard({project, labels}: { project: Project; labels: Portfolio["site"]["labels"] }) {
+export function ProjectCard({project, labels, labelSeparator}: { project: Project; labels: Portfolio["site"]["labels"]; labelSeparator: string }) {
     const demo = safeWebUrl(project.demoUrl), source = safeWebUrl(project.source.url);
     return <article id={`project-${project.id}`}
                     className="project-card flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 hover:ring-muted transition-all duration-200 bg-card">
@@ -43,12 +43,12 @@ export function ProjectCard({project, labels}: { project: Project; labels: Portf
             <section data-project-section="role" className="space-y-3">
                 <h4 className="text-xs font-semibold tracking-wide uppercase">{labels.roleChallenge}</h4>
                 <ul className="project-bullets">{project.roleAndChallenge.map((item, i) => <li key={i}><strong
-                    className="font-medium text-foreground">{item.label}: </strong>{item.text}</li>)}</ul>
+                    className="font-medium text-foreground">{item.label}{labelSeparator}</strong>{item.text}</li>)}</ul>
             </section>
             <section data-project-section="reflection" className="space-y-3">
                 <h4 className="text-xs font-semibold tracking-wide uppercase">{labels.reflection}</h4>
                 <ul className="project-bullets">{project.reflection.map((item, i) => <li key={i}><strong
-                    className="font-medium text-foreground">{item.label}: </strong>{item.text}</li>)}</ul>
+                    className="font-medium text-foreground">{item.label}{labelSeparator}</strong>{item.text}</li>)}</ul>
             </section>
         </div>
     </article>;

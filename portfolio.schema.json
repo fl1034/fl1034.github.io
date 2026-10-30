@@ -1,14 +1,11 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Portfolio content",
   "type": "object",
   "properties": {
     "profile": {
       "type": "object",
       "properties": {
         "name": {
-          "type": "string",
-          "description": "Your name. Used throughout the website and r\u00e9sum\u00e9."
+          "type": "string"
         },
         "role": {
           "type": "string"
@@ -20,28 +17,29 @@
           "type": "string"
         },
         "email": {
-          "type": "string",
-          "format": "email",
-          "description": "The only applicant email address. Controls every display and the contact email link."
+          "type": "string"
         },
         "photo": {
           "type": "object",
           "properties": {
             "src": {
-              "type": "string",
-              "description": "Path to your photo, relative to index.html."
+              "type": "string"
             },
             "alt": {
               "type": "string"
             },
             "caption": {
               "type": "string"
+            },
+            "placeholderLabel": {
+              "type": "string"
             }
           },
           "required": [
             "src",
             "alt",
-            "caption"
+            "caption",
+            "placeholderLabel"
           ]
         },
         "socialLinks": {
@@ -151,8 +149,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string",
-            "pattern": "^[a-z][a-z0-9-]*$"
+            "type": "string"
           },
           "name": {
             "type": "string"
@@ -200,8 +197,7 @@
             }
           },
           "demoUrl": {
-            "type": "string",
-            "description": "Real live-demo URL. Leave empty until the demo is available."
+            "type": "string"
           },
           "roleAndChallenge": {
             "type": "array",
@@ -219,8 +215,7 @@
                 "label",
                 "text"
               ]
-            },
-            "minItems": 2
+            }
           },
           "reflection": {
             "type": "array",
@@ -238,8 +233,7 @@
                 "label",
                 "text"
               ]
-            },
-            "minItems": 2
+            }
           }
         },
         "required": [
@@ -447,49 +441,19 @@
             "availability": {
               "type": "string"
             },
-            "formName": {
+            "about": {
               "type": "string"
             },
-            "formEmail": {
+            "skills": {
               "type": "string"
             },
-            "formSubject": {
+            "projects": {
               "type": "string"
             },
-            "formMessage": {
+            "resume": {
               "type": "string"
             },
-            "prepareDraft": {
-              "type": "string"
-            },
-            "draftTitle": {
-              "type": "string"
-            },
-            "copyDraft": {
-              "type": "string"
-            },
-            "openEmail": {
-              "type": "string"
-            },
-            "close": {
-              "type": "string"
-            },
-            "draftReady": {
-              "type": "string"
-            },
-            "copied": {
-              "type": "string"
-            },
-            "copyFallback": {
-              "type": "string"
-            },
-            "whitespaceError": {
-              "type": "string"
-            },
-            "sampleDraftNotice": {
-              "type": "string"
-            },
-            "realDraftNotice": {
+            "contact": {
               "type": "string"
             }
           },
@@ -514,21 +478,11 @@
             "backToTop",
             "contactEmail",
             "availability",
-            "formName",
-            "formEmail",
-            "formSubject",
-            "formMessage",
-            "prepareDraft",
-            "draftTitle",
-            "copyDraft",
-            "openEmail",
-            "close",
-            "draftReady",
-            "copied",
-            "copyFallback",
-            "whitespaceError",
-            "sampleDraftNotice",
-            "realDraftNotice"
+            "about",
+            "skills",
+            "projects",
+            "resume",
+            "contact"
           ]
         },
         "footer": {
@@ -540,6 +494,257 @@
         "navigation",
         "labels",
         "footer"
+      ]
+    },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "description"
+          ]
+        },
+        "shell": {
+          "type": "object",
+          "properties": {
+            "skipLink": {
+              "type": "string"
+            },
+            "noScript": {
+              "type": "string"
+            },
+            "loading": {
+              "type": "string"
+            },
+            "errorTitle": {
+              "type": "string"
+            },
+            "errorDescription": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "skipLink",
+            "noScript",
+            "loading",
+            "errorTitle",
+            "errorDescription"
+          ]
+        },
+        "navigation": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "themeToggle": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "label",
+            "themeToggle"
+          ]
+        },
+        "projectsHeading": {
+          "type": "string"
+        },
+        "footer": {
+          "type": "object",
+          "properties": {
+            "creditPrefix": {
+              "type": "string"
+            },
+            "creditName": {
+              "type": "string"
+            },
+            "creditUrl": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "creditPrefix",
+            "creditName",
+            "creditUrl"
+          ]
+        },
+        "format": {
+          "type": "object",
+          "properties": {
+            "listSeparator": {
+              "type": "string"
+            },
+            "yearSeparator": {
+              "type": "string"
+            },
+            "labelSeparator": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "listSeparator",
+            "yearSeparator",
+            "labelSeparator"
+          ]
+        },
+        "notFound": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "home": {
+              "type": "string"
+            },
+            "homeUrl": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "title",
+            "description",
+            "home",
+            "homeUrl"
+          ]
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "subject": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "prepare": {
+              "type": "string"
+            },
+            "review": {
+              "type": "string"
+            },
+            "open": {
+              "type": "string"
+            },
+            "copy": {
+              "type": "string"
+            },
+            "invalid": {
+              "type": "string"
+            },
+            "ready": {
+              "type": "string"
+            },
+            "copied": {
+              "type": "string"
+            },
+            "copyFallback": {
+              "type": "string"
+            },
+            "bodyTemplate": {
+              "type": "string"
+            },
+            "previewTemplate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "email",
+            "subject",
+            "message",
+            "note",
+            "prepare",
+            "review",
+            "open",
+            "copy",
+            "invalid",
+            "ready",
+            "copied",
+            "copyFallback",
+            "bodyTemplate",
+            "previewTemplate"
+          ]
+        },
+        "iconTitles": {
+          "type": "object",
+          "properties": {
+            "linkedin": {
+              "type": "string"
+            },
+            "x": {
+              "type": "string"
+            },
+            "youtube": {
+              "type": "string"
+            },
+            "nextjs": {
+              "type": "string"
+            },
+            "framer": {
+              "type": "string"
+            },
+            "tailwind": {
+              "type": "string"
+            },
+            "react": {
+              "type": "string"
+            },
+            "github": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "linkedin",
+            "x",
+            "youtube",
+            "nextjs",
+            "framer",
+            "tailwind",
+            "react",
+            "github"
+          ]
+        }
+      },
+      "required": [
+        "language",
+        "metadata",
+        "shell",
+        "navigation",
+        "projectsHeading",
+        "footer",
+        "format",
+        "notFound",
+        "contact",
+        "iconTitles"
       ]
     }
   },
@@ -553,6 +758,10 @@
     "skills",
     "resume",
     "contact",
-    "site"
-  ]
+    "site",
+    "ui"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portfolio text and content",
+  "description": "Edit source/public/portfolio.json. Preserve identifiers, paths and {template} placeholders."
 }

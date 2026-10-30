@@ -12,6 +12,7 @@ import {emailHref, safeImage, safeWebUrl, type Portfolio} from "@/lib/portfolio"
 export function PortfolioView({data}: { data: Portfolio }) {
     const {profile, about, education, projects, skills, resume, contact, site} = data;
     const l = site.labels;
+    const ui = data.ui;
     const initials = profile.name.split(/\s+/).map(s => s[0]).slice(0, 2).join("");
     const sampleEmail = profile.email.endsWith("@example.com");
     const mail = emailHref(profile.email);
@@ -43,6 +44,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
                             <Avatar className="size-28 sm:size-32 border rounded-full shadow-lg ring-4 ring-muted">
                                 <AvatarImage alt={profile.photo.alt} src={safeImage(profile.photo.src)}/>
                                 <AvatarFallback>{initials}</AvatarFallback>
+                                {profile.photo.src === "assets/images/photo-placeholder.svg" && <span aria-hidden="true" className="absolute bottom-1 inset-x-0 text-[5px] tracking-widest text-[#5f4940]">{profile.photo.placeholderLabel}</span>}
                             </Avatar>
                             {profile.photo.caption && <figcaption
                                 className="text-xs text-muted-foreground">{profile.photo.caption}</figcaption>}
@@ -57,7 +59,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
                     {about.story.map((text, i) => <p key={i}>{text}</p>)}
                     <p>{about.careerGoal}</p>
                     <p className="text-sm"><span
-                        className="font-medium text-foreground">{l.interests}: </span>{about.interests.join(" · ")}</p>
+                        className="font-medium text-foreground">{l.interests}{ui.format.labelSeparator}</span>{about.interests.join(ui.format.listSeparator)}</p>
                 </BlurFade>
             </section>
             <section id="education" className="scroll-mt-8 space-y-6">
@@ -70,11 +72,11 @@ export function PortfolioView({data}: { data: Portfolio }) {
                         <div className="flex-1 min-w-0 space-y-2">
                             <div className="flex flex-col sm:flex-row sm:justify-between gap-1"><h3
                                 className="font-semibold">{item.institution}</h3><p
-                                className="text-xs tabular-nums text-muted-foreground pt-1">{item.startYear}–{item.endYear}</p>
+                                className="text-xs tabular-nums text-muted-foreground pt-1">{item.startYear}{ui.format.yearSeparator}{item.endYear}</p>
                             </div>
                             <p className="text-sm">{item.qualification}</p><p
                             className="text-sm text-muted-foreground">{item.completion}</p>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{item.learning.join(" · ")}</p>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{item.learning.join(ui.format.listSeparator)}</p>
                         </div>
                     </div>
                 </BlurFade>)}
@@ -87,14 +89,14 @@ export function PortfolioView({data}: { data: Portfolio }) {
                             className="border bg-primary text-background rounded-xl px-4 py-1 text-sm font-medium">{l.projects}</span>
                         <div className="flex-1 h-px bg-linear-to-l from-transparent to-border"/>
                     </div>
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">AI & application projects</h2>
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{ui.projectsHeading}</h2>
                     <p className="text-muted-foreground leading-relaxed max-w-xl">{data.projectsIntro}</p>
                     <p className="text-xs text-muted-foreground leading-relaxed max-w-xl">{data.sampleNotice}</p>
                 </BlurFade>
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 items-start">
                     {projects.map((project, i) => <BlurFade key={project.id} delay={0.04 + (i % 2) * 0.05} inView
                                                             className="h-full"><ProjectCard project={project}
-                                                                                            labels={l}/></BlurFade>)}
+                                                                                            labels={l} labelSeparator={ui.format.labelSeparator}/></BlurFade>)}
                 </div>
             </section>
             <section id="skills" className="scroll-mt-8 space-y-6">
@@ -108,7 +110,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
                     <p className="text-xs text-muted-foreground leading-relaxed">{group.level}</p>
                 </BlurFade>)}
                 <BlurFade inView className="space-y-3"><h3 className="text-sm font-semibold">{l.workingStrengths}</h3><p
-                    className="text-sm text-muted-foreground leading-relaxed">{skills.workingStrengths.join(" · ")}</p>
+                    className="text-sm text-muted-foreground leading-relaxed">{skills.workingStrengths.join(ui.format.listSeparator)}</p>
                 </BlurFade>
                 <BlurFade inView className="space-y-3"><h3 className="text-sm font-semibold">{l.certifications}</h3><p
                     className="text-sm text-muted-foreground leading-relaxed">{skills.certifications}</p></BlurFade>
@@ -122,7 +124,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
                                 onClick={() => window.print()}><Printer className="size-3.5"
                                                                         aria-hidden="true"/>{l.printResume}</button>
                     </div>
-                    <div className="print-only"><h1>{profile.name}</h1><p>{profile.role} · {profile.location}</p>
+                    <div className="print-only"><h1>{profile.name}</h1><p>{profile.role}{ui.format.listSeparator}{profile.location}</p>
                         <p>{profile.email}</p></div>
                     <p className="text-muted-foreground leading-relaxed">{resume.summary}</p>
                     <ul className="flex flex-wrap gap-2">{resume.coreSkills.map(item => <li key={item}><Badge
@@ -130,14 +132,14 @@ export function PortfolioView({data}: { data: Portfolio }) {
                     <div className="space-y-2"><h3
                         className="text-sm font-semibold">{l.education}</h3>{education.map(item => <p
                         key={item.institution}
-                        className="text-sm text-muted-foreground">{item.institution} · {item.qualification} · {item.startYear}–{item.endYear}</p>)}
+                        className="text-sm text-muted-foreground">{item.institution}{ui.format.listSeparator}{item.qualification}{ui.format.listSeparator}{item.startYear}{ui.format.yearSeparator}{item.endYear}</p>)}
                     </div>
                     <div className="space-y-3"><h3 className="text-sm font-semibold">{resume.experienceHeading}</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">{projects.filter(p => resume.selectedProjectIds.includes(p.id)).map(p =>
                             <li key={p.id}><a href={`#project-${p.id}`}
                                               className="font-medium text-foreground underline underline-offset-4">{p.name}</a>
                                 <p className="leading-relaxed mt-1">{p.description}</p><p
-                                    className="text-xs mt-1">{p.technologies.join(" · ")}</p></li>)}</ul>
+                                    className="text-xs mt-1">{p.technologies.join(ui.format.listSeparator)}</p></li>)}</ul>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{resume.nextSteps}</p>
                 </BlurFade>
@@ -153,7 +155,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
                         {sampleEmail &&
                             <p className="mt-2 text-xs text-muted-foreground">{contact.sampleEmailNotice}</p>}
                     </div>
-                    <ContactForm email={profile.email}/>
+                    <ContactForm email={profile.email} copy={ui.contact}/>
                     <div className="flex gap-4 flex-wrap">{profile.socialLinks.map(item => {
                         const url = safeWebUrl(item.url);
                         return url ? <a key={item.label} href={url} target="_blank" rel="noopener noreferrer"
@@ -164,12 +166,11 @@ export function PortfolioView({data}: { data: Portfolio }) {
             </section>
             <footer
                 className="flex flex-col sm:flex-row justify-between gap-2 text-xs text-muted-foreground border-t border-border pt-6">
-                <p>{profile.name} · {site.footer}</p><p>Template by <a href="https://github.com/magicuidesign/portfolio"
+                <p>{profile.name}{ui.format.listSeparator}{site.footer}</p><p>{ui.footer.creditPrefix}{" "}<a href={safeWebUrl(ui.footer.creditUrl)}
                                                                        target="_blank" rel="noopener noreferrer"
-                                                                       className="underline underline-offset-4">Magic
-                UI</a></p>
+                                                                       className="underline underline-offset-4">{ui.footer.creditName}</a></p>
             </footer>
         </main>
-        <Navbar items={site.navigation}/>
+        <Navbar items={site.navigation} copy={ui.navigation}/>
     </>;
 }

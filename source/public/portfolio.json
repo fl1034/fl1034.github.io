@@ -9,7 +9,8 @@
     "photo": {
       "src": "assets/images/photo-placeholder.svg",
       "alt": "Professional photo placeholder",
-      "caption": "Photo placeholder"
+      "caption": "Photo placeholder",
+      "placeholderLabel": "PHOTO PLACEHOLDER"
     },
     "socialLinks": [
       {
@@ -402,21 +403,6 @@
       "backToTop": "Back to top",
       "contactEmail": "Email",
       "availability": "Availability",
-      "formName": "Your name",
-      "formEmail": "Your email",
-      "formSubject": "Subject",
-      "formMessage": "Message",
-      "prepareDraft": "Prepare email draft",
-      "draftTitle": "Review your draft",
-      "copyDraft": "Copy draft",
-      "openEmail": "Open email app",
-      "close": "Close",
-      "draftReady": "Draft prepared. No message has been sent.",
-      "copied": "Draft copied. No message has been sent.",
-      "copyFallback": "Draft selected. Use your device’s Copy command.",
-      "whitespaceError": "Enter a name, subject, and message; spaces alone are not enough.",
-      "sampleDraftNotice": "This portfolio uses a sample address. You can copy this draft; no message has been sent.",
-      "realDraftNotice": "Review the draft, then open your email app to send it. No message has been sent yet.",
       "about": "About",
       "skills": "Skills",
       "projects": "Projects",
@@ -424,5 +410,68 @@
       "contact": "Contact"
     },
     "footer": "Student portfolio · 2026"
+  },
+  "ui": {
+    "language": "en",
+    "metadata": {
+      "title": "{name} | {role}",
+      "description": "Student portfolio: education, programming skills, and AI projects."
+    },
+    "shell": {
+      "skipLink": "Skip to content",
+      "noScript": "Enable JavaScript to load the portfolio content.",
+      "loading": "Loading portfolio…",
+      "errorTitle": "Portfolio content could not be loaded",
+      "errorDescription": "Check that portfolio.json is valid and served beside index.html, then reload."
+    },
+    "navigation": {
+      "label": "Portfolio navigation",
+      "themeToggle": "Toggle light or dark theme"
+    },
+    "projectsHeading": "AI & application projects",
+    "footer": {
+      "creditPrefix": "Template by",
+      "creditName": "Magic UI",
+      "creditUrl": "https://github.com/magicuidesign/portfolio"
+    },
+    "format": {
+      "listSeparator": " · ",
+      "yearSeparator": "–",
+      "labelSeparator": ": "
+    },
+    "notFound": {
+      "code": "404",
+      "title": "Page Not Found",
+      "description": "The page you're looking for doesn't exist or may have been moved.",
+      "home": "Go to Home",
+      "homeUrl": "/"
+    },
+    "contact": {
+      "name": "Your name",
+      "email": "Your email",
+      "subject": "Subject",
+      "message": "Message",
+      "note": "Prepare a message for {email}. You’ll review and send it from your email app.",
+      "prepare": "Prepare email draft",
+      "review": "Review your draft",
+      "open": "Open email app",
+      "copy": "Copy draft",
+      "invalid": "Enter your name, a valid email address, subject, and message. Spaces alone are not enough.",
+      "ready": "Your draft is ready. Open your email app to review and send it.",
+      "copied": "Draft copied. Paste it into your email app to send it.",
+      "copyFallback": "Select and copy the draft below, then paste it into your email app.",
+      "bodyTemplate": "{message}\n\nFrom: {name}\nReply to: {email}",
+      "previewTemplate": "To: {email}\nSubject: {subject}\n\n{body}"
+    },
+    "iconTitles": {
+      "linkedin": "LinkedIn",
+      "x": "X",
+      "youtube": "youtube",
+      "nextjs": "Next.js",
+      "framer": "Framer Motion",
+      "tailwind": "Tailwind CSS",
+      "react": "React",
+      "github": "GitHub"
+    }
   }
 }

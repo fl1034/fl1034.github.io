@@ -10,7 +10,8 @@
     "build": "next build --webpack",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "check": "node --import tsx scripts/check.tsx"
+    "check": "node --import tsx scripts/check.tsx",
+    "export:site": "npm run build && node scripts/export-site.mjs"
   },
   "dependencies": {
     "@content-collections/mdx": "^0.2.2",

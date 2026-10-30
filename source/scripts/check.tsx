@@ -6,7 +6,7 @@ import {parseHTML} from "linkedom";
 import {PortfolioView} from "@/components/portfolio-view";
 import {TooltipProvider} from "@/components/ui/tooltip";
 import {ThemeProvider} from "@/components/theme-provider";
-import {validatePortfolio, safeWebUrl, safeImage, emailHref, type Portfolio} from "@/lib/portfolio";
+import {formatText, validatePortfolio, safeWebUrl, safeImage, emailHref, type Portfolio} from "@/lib/portfolio";
 
 const data: Portfolio = JSON.parse(readFileSync(new URL("../public/portfolio.json", import.meta.url), "utf8"));
 validatePortfolio(data);
@@ -42,3 +42,20 @@ assert.equal(safeImage("//untrusted.example/image.png"), undefined);
 assert.equal(emailHref("hello@example.com?bcc=other@example.com"), undefined);
 assert.throws(() => validatePortfolio({profile: {}}));
 console.log("Passed: five project sections, multiple bullets, complete long content, JSON email/name updates, navigation, demo links, URL safeguards, invalid content.");
+
+const editedCopy = structuredClone(data);
+editedCopy.ui.projectsHeading = "Edited project heading";
+editedCopy.ui.footer.creditPrefix = "Edited credit";
+editedCopy.ui.footer.creditName = "Edited template name";
+editedCopy.ui.navigation.themeToggle = "Edited theme control";
+editedCopy.ui.contact.prepare = "Edited contact action";
+editedCopy.ui.format.labelSeparator = " → ";
+const editedDoc = render(editedCopy);
+for (const text of [editedCopy.ui.projectsHeading, editedCopy.ui.footer.creditPrefix,
+    editedCopy.ui.footer.creditName, editedCopy.ui.contact.prepare]) {
+    assert.ok(editedDoc.querySelector('main')?.textContent?.includes(text), `Edited copy is rendered: ${text}`);
+}
+assert.ok(editedDoc.querySelector('[aria-label="Edited theme control"]'));
+assert.ok(editedDoc.querySelector('.project-card strong')?.textContent?.includes(" → "));
+assert.equal(formatText("{message} / {name}", {message: "$& {name}", name: "Alex"}), "$& {name} / Alex");
+console.log("Passed: editable UI copy, decorative separators, accessibility labels, literal template input.");

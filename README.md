@@ -1,33 +1,28 @@
-# John Smith — Magic UI Portfolio
+# Feitian Li — Portfolio
 
-This website uses the actual Magic UI Portfolio template:
-https://github.com/magicuidesign/portfolio
+## Edit the text in WebStorm
 
-## Ready-built website
+Open **[`source/public/portfolio.json`](source/public/portfolio.json)**. It contains
+all site copy, including decorative labels, form messages, accessibility labels,
+metadata, loading/error text, and the 404 page. WebStorm uses the adjacent JSON schema.
 
-- `website/` contains the complete static website.
-- Edit **`website/portfolio.json`** for all personal information and project content. No build is needed.
-- Replace the photo and project illustrations in `website/assets/images/` as desired.
-- Put your actual live-demo URLs in each project's `demoUrl` field. Empty links show as pending.
-- Upload the **contents** of `website/` to GitHub Pages, including `.nojekyll` and `_next/`.
-
-To preview locally, run this command from this unzipped folder:
+See **[Editing guide](source/docs/EDITING-CONTENT.md)** for the field map and templates.
 
 ```sh
-python3 -m http.server 8000 --directory website
+cd source
+npm ci                 # first time only
+npm run dev            # preview locally
+# After editing:
+npm run check
+npm run export:site    # rebuild and refresh the published files at repository root
 ```
 
-On Windows use `py` instead of `python3`. Open http://localhost:8000.
-Do not double-click index.html: JSON loading needs a web server.
+The root `portfolio.json` is generated from the source copy. Edit only
+`source/public/portfolio.json`. Commit the source and regenerated files, then push
+`master` to deploy via GitHub Pages.
 
-## Full source
+Project screenshots live in `source/public/assets/images/`. Text embedded in those
+images belongs to the separate demo apps; changing it requires a new screenshot.
 
-`website/source` contains the customized Next.js/React/TypeScript template, lockfile, license, and setup instructions.
-To
-change the design, run `npm ci` and `npm run dev` there. `npm run build` creates a new static export in `out/`.
-
-If rebuilding after editing the ready-built content, first copy `website/portfolio.json` to
-`website/source`. The two copies are not automatically synchronized.
-
-Build, TypeScript, ESLint, content-rendering checks, and static asset checks passed. Browser visual verification was
-unavailable. See `website/source` for details.
+The site uses the [Magic UI Portfolio](https://github.com/magicuidesign/portfolio)
+template. Its MIT license and provenance are preserved in `source/`.
