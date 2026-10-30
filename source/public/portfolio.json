@@ -317,23 +317,21 @@
       {
         "id": "origami-debugging",
         "projectId": "origami",
-        "title": "Debugging across devices",
+        "title": "Learning as I go",
         "skills": "Independent learning · Problem-solving",
         "paragraphs": [
-          "FEM was unfamiliar territory, so I used AI-assisted numerical experiments to build confidence before applying my implementation to a large origami problem.",
-          "About 30% of my test cases converged on my laptop but failed on my phone. I investigated the documentation and traced the discrepancy to FP16 storage precision. Correcting it resolved those failures.",
-          "The lesson I take from this is to test assumptions at a small scale and consider device-dependent numerical behavior. This record summarizes my observations; the live folding demo is the accompanying artifact."
+          "When something is unfamiliar, I break it into smaller problems I can work through. That’s how I approached the finite element method for my origami solver: I used AI-assisted experiments to understand the behavior and check my implementation before taking on the full simulation.",
+          "I also stick with problems that don’t have an obvious explanation. When the solver worked on my laptop but failed on my phone, digging through documentation helped me trace the issue to storage precision and get both working."
         ]
       },
       {
         "id": "molecular-scope",
         "projectId": "molecular",
-        "title": "Choosing a feasible scope",
+        "title": "Knowing when to change direction",
         "skills": "Research · Adaptability · Scope management",
         "paragraphs": [
-          "My original goal was a visual library of organic chemistry reactions. The sources I found usually offered structural-formula images, not spatial data that could be conveniently used in a viewer.",
-          "Rather than undertake an unrealistic data-gathering effort, I changed the goal to displaying existing protein structures. The delivered viewer retains the visual exploration idea within a feasible scope.",
-          "This decision taught me to assess the data requirements before committing to the full feature set. The molecular viewer is evidence of the revised outcome, not a reaction or folding simulator."
+          "I’m willing to rethink an idea when I learn what it would actually take to build it. My molecular project started as a library of organic chemistry reactions, but finding usable spatial data would have turned it into a much larger research task.",
+          "I narrowed it to a viewer for existing protein structures. That kept the part I cared about—exploring chemistry visually—while giving me something I could realistically finish."
         ]
       }
     ],
