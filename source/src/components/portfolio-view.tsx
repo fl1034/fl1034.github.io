@@ -84,12 +84,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
             </section>
             <section id="projects" className="scroll-mt-8 space-y-8">
                 <BlurFade className="flex flex-col gap-4 items-center text-center">
-                    <div className="flex items-center w-full gap-4">
-                        <div className="flex-1 h-px bg-linear-to-r from-transparent to-border"/>
-                        <span
-                            className="border bg-primary text-background rounded-xl px-4 py-1 text-sm font-medium">{l.projects}</span>
-                        <div className="flex-1 h-px bg-linear-to-l from-transparent to-border"/>
-                    </div>
+                    <div aria-hidden="true" className="w-full h-px bg-linear-to-r from-transparent via-border to-transparent"/>
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{ui.projectsHeading}</h2>
                     <p className="text-muted-foreground leading-relaxed max-w-xl">{data.projectsIntro}</p>
                     <p className="text-xs text-muted-foreground leading-relaxed max-w-xl">{data.sampleNotice}</p>
