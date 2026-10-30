@@ -106,3 +106,8 @@ The website uses Google Sans, served locally from `public/assets/fonts/`.
 The variable WOFF2 files cover weights 400–700, with Latin and extended Latin
 subsets. `google-sans-OFL.txt` contains its license. The font family is set in
 `src/app/globals.css` and the font stylesheet is loaded by `src/app/layout.tsx`.
+
+Headings (h1–h3) use Google Sans Flex with automatic optical sizing (opsz 1–144).
+Body and UI text retain Google Sans. Both are self-hosted; the Flex license is
+in `google-sans-flex-OFL.txt`. Display headings use medium weight and regular
+spacing rather than the previous tightly tracked bold treatment.

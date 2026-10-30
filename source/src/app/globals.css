@@ -448,3 +448,9 @@ a:focus-visible, button:focus-visible {
         outline-offset: 3px;
     }
 }
+
+/* Flex adjusts heading letterforms to their rendered optical size. */
+h1, h2, h3 {
+    font-family: "Google Sans Flex", "Google Sans", ui-sans-serif, system-ui, sans-serif;
+    font-optical-sizing: auto;
+}

@@ -16,6 +16,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return <html lang={content.ui.language} suppressHydrationWarning>
     <head>
         <link rel="stylesheet" href="assets/fonts/google-sans.css"/>
+        <link rel="stylesheet" href="assets/fonts/google-sans-flex.css"/>
     </head>
     <body className="font-sans min-h-screen bg-background antialiased relative">
     <ThemeProvider attribute="class" defaultTheme="light"><TooltipProvider delayDuration={0}>

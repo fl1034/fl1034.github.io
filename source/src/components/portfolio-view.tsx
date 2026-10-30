@@ -26,7 +26,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 <div className="gap-6 flex flex-col sm:flex-row justify-between">
                     <div className="gap-3 flex flex-col order-2 sm:order-1 max-w-xl">
                         <h1><BlurFadeText delay={0.04}
-                                          className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
+                                          className="text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl"
                                           yOffset={8} text={profile.name}/></h1>
                         <BlurFade delay={0.08}>
                             <p className="text-lg text-foreground font-medium leading-relaxed">{profile.role}</p>
@@ -72,14 +72,14 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 </div>
             </section>
             <section id="about" className="scroll-mt-8 space-y-5">
-                <BlurFade delay={0.12}><h2 className="text-xl font-bold">{l.about}</h2></BlurFade>
+                <BlurFade delay={0.12}><h2 className="text-xl font-semibold">{l.about}</h2></BlurFade>
                 <BlurFade delay={0.16} className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>{about.introduction}</p>
                     {about.story.map((text, i) => <p key={i}>{text}</p>)}
                 </BlurFade>
             </section>
             <section id="education" className="scroll-mt-8 space-y-6">
-                <BlurFade><h2 className="text-xl font-bold">{l.education}</h2></BlurFade>
+                <BlurFade><h2 className="text-xl font-semibold">{l.education}</h2></BlurFade>
                 {education.map(item => <BlurFade key={item.institution}>
                     <div className="flex flex-col sm:flex-row items-start gap-5">
                         <div className="w-36 shrink-0 overflow-hidden rounded-lg border border-border bg-white p-2">
@@ -101,7 +101,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
             <section id="projects" className="scroll-mt-8 space-y-8">
                 <BlurFade className="flex flex-col gap-4 items-center text-center">
                     <div aria-hidden="true" className="w-full h-px bg-linear-to-r from-transparent via-border to-transparent"/>
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{ui.projectsHeading}</h2>
+                    <h2 className="text-2xl font-medium tracking-normal sm:text-[2rem] leading-tight">{ui.projectsHeading}</h2>
                 </BlurFade>
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 items-start">
                     {projects.map((project, i) => <BlurFade key={project.id} delay={0.04 + (i % 2) * 0.05} inView
@@ -110,9 +110,9 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 </div>
             </section>
             <section id="skills" className="scroll-mt-8 space-y-6">
-                <BlurFade><h2 className="text-xl font-bold">{l.skills}</h2></BlurFade>
+                <BlurFade><h2 className="text-xl font-semibold">{l.skills}</h2></BlurFade>
                 <article className="relative overflow-hidden rounded-2xl border-2 border-indigo-500/50 bg-gradient-to-br from-indigo-500/15 via-violet-500/10 to-sky-500/15 p-6 space-y-4 shadow-sm">
-                    <h3 className="text-xl font-bold tracking-tight">{skills.featured.title}</h3>
+                    <h3 className="text-xl font-semibold tracking-normal">{skills.featured.title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">{skills.featured.description}</p>
                     <a className="inline-block text-sm font-medium underline underline-offset-4" href={`#evidence-${skills.featured.evidenceId}`}>{skills.featured.evidenceLabel}</a>
                 </article>
@@ -145,7 +145,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
             </section>
             <section id="contact" className="scroll-mt-8 space-y-5 border-t border-border pt-10">
                 <BlurFade inView className="space-y-5">
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{l.contact}</h2>
+                    <h2 className="text-2xl font-medium tracking-normal sm:text-[2rem] leading-tight">{l.contact}</h2>
                     <p className="text-muted-foreground leading-relaxed">{contact.invitation}</p>
                     <p className="text-sm text-muted-foreground leading-relaxed">{contact.availability}</p>
                     <div>{!sampleEmail && mail ? <a href={mail}

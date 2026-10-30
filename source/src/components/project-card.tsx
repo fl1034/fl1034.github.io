@@ -14,7 +14,7 @@ export function ProjectCard({project, labels, labelSeparator}: { project: Projec
         </div>
         <div className="p-6 flex flex-col gap-6">
             <section data-project-section="description" className="space-y-3">
-                <h3 className="text-lg font-semibold tracking-tight leading-snug">{project.name}</h3>
+                <h3 className="text-lg font-medium tracking-normal leading-snug">{project.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
                 {source && <p className="text-xs text-muted-foreground leading-relaxed">{labels.source} <a
                     className="underline underline-offset-4 hover:text-foreground" href={source} target="_blank"
