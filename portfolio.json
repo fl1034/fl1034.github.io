@@ -23,11 +23,9 @@
     ]
   },
   "about": {
-    "introduction": "I’m Feitian, a Computer System Technology student at Saskatchewan Polytechnic in Regina, expecting to graduate in 2027. My background combines programming and database coursework with hands-on web development and AI tooling, supported by CompTIA A+ and Network+ certifications.",
+    "introduction": "Hi, I’m Feitian, a developer attending Saskatchewan Polytechnic’s Computer System Technology program. I work with Rust, C/C++, JavaScript/TypeScript, and Go, and am a proficient user of AI coding agents and harnesses for implementation, debugging, and testing. I’m especially interested in high-performance software and the systems that keep everything running, from compilers to operating systems. I’m looking for a junior developer role where I can contribute those skills and grow alongside experienced engineers. I learn quickly, and I’m always excited to take on a technical challenge in unfamiliar territory.",
     "story": [
-      "I was drawn to programming by the enormous systems we rely on every day: compilers, operating systems, and database engines. I wanted to know how they worked, and that curiosity has grown into an ambition to build high-performance software myself.",
-      "AI adds another dimension to that ambition. Working with coding agents lets me spend less time on routine implementation and more time defining the logic and mathematical behavior of what I want to build. I’m looking for a junior developer role where I can put that approach to work, learn from experienced engineers, and deepen my understanding of the systems underneath the applications.",
-      "Outside programming, I enjoy photography, cooking, and building LEGO sets. LEGO is the one I’d happily call myself a master at."
+      "Away from the keyboard, I enjoy photography, cooking, and building LEGO sets. I’m pretty handy with the first two; with LEGO, I’m accepting challenges."
     ]
   },
   "education": [
