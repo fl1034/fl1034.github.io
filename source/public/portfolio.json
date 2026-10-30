@@ -409,7 +409,33 @@
       "softEvidence": "Soft skills",
       "evidenceProject": "View the project"
     },
-    "footer": "Student portfolio · Last updated October 30, 2026"
+    "footer": "Student portfolio · Last updated October 30, 2026",
+    "sectionNavigation": [
+      {
+        "id": "hero",
+        "label": "Home"
+      },
+      {
+        "id": "about",
+        "label": "About"
+      },
+      {
+        "id": "education",
+        "label": "Education"
+      },
+      {
+        "id": "projects",
+        "label": "Projects"
+      },
+      {
+        "id": "skills",
+        "label": "Skills"
+      },
+      {
+        "id": "contact",
+        "label": "Contact"
+      }
+    ]
   },
   "ui": {
     "language": "en",
@@ -426,7 +452,8 @@
     },
     "navigation": {
       "label": "Portfolio navigation",
-      "themeToggle": "Toggle light or dark theme"
+      "themeToggle": "Toggle light or dark theme",
+      "sectionIndex": "Section index"
     },
     "projectsHeading": "Selected projects",
     "footer": {

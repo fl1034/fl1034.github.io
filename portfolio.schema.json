@@ -591,13 +591,32 @@
         },
         "footer": {
           "type": "string"
+        },
+        "sectionNavigation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "label"
+            ]
+          }
         }
       },
       "required": [
         "themeColor",
         "navigation",
         "labels",
-        "footer"
+        "footer",
+        "sectionNavigation"
       ]
     },
     "ui": {
@@ -656,11 +675,15 @@
             },
             "themeToggle": {
               "type": "string"
+            },
+            "sectionIndex": {
+              "type": "string"
             }
           },
           "required": [
             "label",
-            "themeToggle"
+            "themeToggle",
+            "sectionIndex"
           ]
         },
         "projectsHeading": {

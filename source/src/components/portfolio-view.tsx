@@ -6,6 +6,7 @@ import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {ProjectCard} from "@/components/project-card";
 import {ContactForm} from "@/components/contact-form";
 import {Tooltip, TooltipTrigger, TooltipContent} from "@/components/ui/tooltip";
+import {SectionIndex} from "@/components/section-index";
 import Navbar from "@/components/navbar";
 import {ArrowDown, ArrowUpRight, MapPin, Github, Mail} from "lucide-react";
 import {emailHref, safeImage, safeWebUrl, type Portfolio} from "@/lib/portfolio";
@@ -169,6 +170,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
                                                                        className="underline underline-offset-4">{ui.footer.creditName}</a></p>
             </footer>
         </main>
+        <SectionIndex items={site.sectionNavigation} label={ui.navigation.sectionIndex}/>
         <Navbar items={site.navigation} copy={ui.navigation}/>
     </>;
 }

@@ -95,3 +95,9 @@ Its original proportions and colors are preserved on both themes.
 
 Header contact icons use `profile.email` and the GitHub entry in
 `profile.socialLinks`. Hover labels follow the same JSON values.
+
+`site.sectionNavigation` controls the fixed left section index; labels are editable
+and IDs must match sections. `ui.navigation.sectionIndex` is its accessible name.
+The index appears at viewport widths of 1200px and above, where there is room in
+the margin, and highlights the current section as you scroll. The existing bottom
+navigation remains available on smaller screens.

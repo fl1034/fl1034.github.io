@@ -392,3 +392,59 @@ a:focus-visible, button:focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 3px;
 }
+
+.section-index {
+    display: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .section-index {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: max(1rem, calc((100vw - 768px) / 2 - 184px));
+        width: 160px;
+        transform: translateY(-50%);
+        z-index: 20;
+    }
+
+    .section-index ul {
+        border-left: 1px solid var(--border);
+    }
+
+    .section-index a {
+        position: relative;
+        display: block;
+        padding: 0.65rem 1rem;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: var(--muted-foreground);
+        font-size: 0.8rem;
+        transition: color 150ms, background-color 150ms;
+    }
+
+    .section-index a:hover,
+    .section-index a[aria-current="location"] {
+        color: var(--foreground);
+        background: color-mix(in srgb, var(--background) 65%, transparent);
+    }
+
+    .section-index a[aria-current="location"] {
+        font-weight: 600;
+    }
+
+    .section-index a[aria-current="location"]::before {
+        content: "";
+        position: absolute;
+        left: -2px;
+        top: 25%;
+        height: 50%;
+        width: 3px;
+        border-radius: 3px;
+        background: var(--foreground);
+    }
+
+    .section-index a:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 3px;
+    }
+}
