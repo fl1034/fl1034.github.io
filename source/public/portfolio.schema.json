@@ -293,12 +293,6 @@
             ]
           }
         },
-        "workingStrengths": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "certifications": {
           "type": "string"
         },
@@ -395,7 +389,6 @@
       "required": [
         "introduction",
         "groups",
-        "workingStrengths",
         "certifications",
         "technicalEvidence",
         "softEvidence",
@@ -577,9 +570,6 @@
             "certifications": {
               "type": "string"
             },
-            "workingStrengths": {
-              "type": "string"
-            },
             "backToTop": {
               "type": "string"
             },
@@ -610,9 +600,6 @@
             "softEvidence": {
               "type": "string"
             },
-            "evidenceNote": {
-              "type": "string"
-            },
             "evidenceProject": {
               "type": "string"
             }
@@ -633,7 +620,6 @@
             "careerGoal",
             "interests",
             "certifications",
-            "workingStrengths",
             "backToTop",
             "contactEmail",
             "availability",
@@ -644,7 +630,6 @@
             "contact",
             "technicalEvidence",
             "softEvidence",
-            "evidenceNote",
             "evidenceProject"
           ]
         },

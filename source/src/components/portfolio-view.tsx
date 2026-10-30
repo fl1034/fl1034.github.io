@@ -117,9 +117,6 @@ export function PortfolioView({data}: { data: Portfolio }) {
                     </li>)}</ul>
                     <p className="text-xs text-muted-foreground leading-relaxed">{group.level}</p>
                 </BlurFade>)}
-                <BlurFade inView className="space-y-3"><h3 className="text-sm font-semibold">{l.workingStrengths}</h3><p
-                    className="text-sm text-muted-foreground leading-relaxed">{skills.workingStrengths.join(ui.format.listSeparator)}</p>
-                </BlurFade>
                 <div className="space-y-4">
                     <h3 className="text-sm font-semibold">{l.technicalEvidence}</h3>
                     <div className="grid gap-4 sm:grid-cols-2">{skills.technicalEvidence.map(item =>
@@ -130,7 +127,6 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 </div>
                 <div className="space-y-4">
                     <h3 className="text-sm font-semibold">{l.softEvidence}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{l.evidenceNote}</p>
                     {skills.softEvidence.map(item => <article id={`evidence-${item.id}`} key={item.id}
                         className="rounded-xl border border-border bg-card p-5 space-y-3 scroll-mt-8">
                         <h4 className="font-semibold">{item.title}</h4>

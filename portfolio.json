@@ -308,12 +308,6 @@
         "level": "Adapted a game for AI players, used AI-assisted experiments to check a solver, and validated database changes against existing tests."
       }
     ],
-    "workingStrengths": [
-      "Independent learning",
-      "Analytical debugging",
-      "Scope management",
-      "Resource awareness"
-    ],
     "certifications": "CompTIA A+ · CompTIA Network+",
     "technicalEvidence": [
       {
@@ -454,7 +448,6 @@
       "careerGoal": "Career goal",
       "interests": "Outside coursework",
       "certifications": "Certifications",
-      "workingStrengths": "How I work",
       "backToTop": "Back to top",
       "contactEmail": "Email",
       "availability": "Availability",
@@ -464,8 +457,7 @@
       "resume": "Résumé",
       "contact": "Contact",
       "technicalEvidence": "Technical work in practice",
-      "softEvidence": "Learning & decisions",
-      "evidenceNote": "Retrospective records based on my development experience, prepared with AI writing assistance. They are not contemporaneous test logs.",
+      "softEvidence": "Soft skills",
       "evidenceProject": "View the project"
     },
     "footer": "Student portfolio · Last updated October 30, 2026"
