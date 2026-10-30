@@ -101,3 +101,8 @@ and IDs must match sections. `ui.navigation.sectionIndex` is its accessible name
 The index appears at viewport widths of 1200px and above, where there is room in
 the margin, and highlights the current section as you scroll. The existing bottom
 navigation remains available on smaller screens.
+
+The website uses Google Sans, served locally from `public/assets/fonts/`.
+The variable WOFF2 files cover weights 400–700, with Latin and extended Latin
+subsets. `google-sans-OFL.txt` contains its license. The font family is set in
+`src/app/globals.css` and the font stylesheet is loaded by `src/app/layout.tsx`.
