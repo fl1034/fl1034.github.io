@@ -170,9 +170,6 @@
           "name": {
             "type": "string"
           },
-          "status": {
-            "type": "string"
-          },
           "description": {
             "type": "string"
           },
@@ -255,7 +252,6 @@
         "required": [
           "id",
           "name",
-          "status",
           "description",
           "source",
           "image",

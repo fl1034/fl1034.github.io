@@ -65,7 +65,6 @@
     {
       "id": "origami",
       "name": "Origami Lab",
-      "status": "Personal project",
       "description": "Explore 25 paper studies in 3D, adjust their folds, and inspect how a flat sheet becomes a structure.",
       "source": {
         "label": "Amanda Ghassaei’s Origami Simulator",
@@ -107,7 +106,6 @@
     {
       "id": "penguins",
       "name": "SQL/REPL",
-      "status": "Personal project",
       "description": "Query CSV, Parquet, and JSON with DuckDB in the browser, explore results, and build charts without a backend.",
       "source": {
         "label": "",
@@ -148,7 +146,6 @@
     {
       "id": "chatbot",
       "name": "5D Chess · AI Spectator",
-      "status": "Personal project",
       "description": "Explore chess across branching timelines, navigate alternate game continuations, and configure AI players.",
       "source": {
         "label": "",
@@ -188,7 +185,6 @@
     {
       "id": "molecular",
       "name": "Molecular Explorer",
-      "status": "Personal project",
       "description": "Explore biological molecules in an interactive 3D viewer, from hemoglobin and DNA to proteins and RNA.",
       "source": {
         "label": "",
@@ -229,7 +225,6 @@
     {
       "id": "multipdf",
       "name": "Internet Pulse",
-      "status": "Personal project",
       "description": "Explore internet latency and reachability measurements across an interactive globe and world map.",
       "source": {
         "label": "",
@@ -319,7 +314,7 @@
       "Scope management",
       "Resource awareness"
     ],
-    "certifications": "No professional certifications earned yet. Current focus: Azure fundamentals and practical deployment skills.",
+    "certifications": "CompTIA A+ · CompTIA Network+",
     "technicalEvidence": [
       {
         "projectId": "origami",

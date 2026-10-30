@@ -8,7 +8,7 @@ completion and validation. All site-owned copy comes from this JSON.
 | --- | --- |
 | `profile` | Name, role, location, email, photo alt text, caption and tiny placeholder label |
 | `about`, `education`, `skills`, `resume`, `contact` | Main page content and downloadable résumé |
-| `projects` | Five cards: titles, descriptions, badges, image alt text, tags, contribution/reflection paragraphs, credits and links |
+| `projects` | Five cards: titles, descriptions, image alt text, tags, contribution/reflection paragraphs, credits and links |
 | `projectsIntro`, `sampleNotice` | Copy above the grid |
 | `site.labels`, `site.navigation`, `site.footer` | Section headings, buttons, tooltips, menus and footer line |
 | `ui.projectsHeading`, `ui.footer` | Large project heading and template credit |

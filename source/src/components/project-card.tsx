@@ -11,8 +11,6 @@ export function ProjectCard({project, labels, labelSeparator}: { project: Projec
         <div className="relative shrink-0 border-b border-border">
             <img src={safeImage(project.image.src)} alt={project.image.alt} width="1000" height="650" loading="lazy"
                  className="w-full aspect-[1000/650] object-cover"/>
-            <Badge
-                className="absolute top-3 right-3 bg-background text-foreground border border-border shadow-sm">{project.status}</Badge>
         </div>
         <div className="p-6 flex flex-col gap-6">
             <section data-project-section="description" className="space-y-3">
