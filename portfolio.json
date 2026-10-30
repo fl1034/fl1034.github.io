@@ -54,8 +54,8 @@
       ]
     }
   ],
-  "projectsIntro": "Three personal projects with live demos, followed by two planned capstones.",
-  "sampleNotice": "The first three projects include screenshots and live demos. Internet Pulse is shown in simulation mode, and SQL/REPL uses sample data. The two capstones are planned.",
+  "projectsIntro": "Five personal projects with live demos: network visualization, multidimensional chess, SQL analysis, origami, and molecular exploration.",
+  "sampleNotice": "Project images are screenshots of the live demos. Internet Pulse is shown in simulation mode, and SQL/REPL uses sample data.",
   "projects": [
     {
       "id": "multipdf",
@@ -99,7 +99,7 @@
     },
     {
       "id": "chatbot",
-      "name": "5D Chess \u00b7 AI Spectator",
+      "name": "5D Chess · AI Spectator",
       "status": "Personal project",
       "description": "Explore chess across branching timelines, navigate alternate game continuations, and configure AI players.",
       "source": {
@@ -179,122 +179,84 @@
       ]
     },
     {
-      "id": "knowledge",
-      "name": "Engineering Knowledge Assistant",
-      "status": "Planned capstone",
-      "description": "A planned assistant for searching engineering runbooks and displaying supporting sources.",
+      "id": "origami",
+      "name": "Origami Lab",
+      "status": "Personal project",
+      "description": "Explore 25 paper studies in 3D, adjust their folds, and inspect how a flat sheet becomes a structure.",
       "source": {
-        "label": "Azure\u2019s document-search assistant",
-        "url": "https://github.com/Azure-Samples/azure-search-openai-demo"
+        "label": "Amanda Ghassaei’s Origami Simulator",
+        "url": "https://origamisimulator.org/"
       },
       "image": {
-        "src": "assets/images/knowledge.svg",
-        "alt": "Concept illustration of engineering documents connected to a retrieval service"
+        "src": "assets/images/origami.webp",
+        "alt": "Origami Lab displaying a blue Miura tessellation at 65% fold with the pattern collection and paper controls"
       },
       "technologies": [
-        "React",
-        "TypeScript",
-        "Python / Quart",
-        "Azure OpenAI",
-        "Azure AI Search",
-        "Document storage"
+        "JavaScript",
+        "WebGL",
+        "FOLD files",
+        "3D geometry"
       ],
       "demoUrl": "https://fl1034.github.io/Origami-Demo/",
       "roleAndChallenge": [
         {
-          "label": "Planned role",
-          "text": "Adapt the interface/backend, prepare synthetic runbooks, and evaluate retrieval."
+          "label": "Feature",
+          "text": "Choose a paper study, drag to fold, and orbit or zoom the 3D model."
         },
         {
-          "label": "Anticipated challenge",
-          "text": "Similar troubleshooting terms can retrieve the wrong supporting document."
-        },
-        {
-          "label": "Planned response",
-          "text": "Compare keyword and hybrid retrieval using the same questions."
-        },
-        {
-          "label": "Planned response",
-          "text": "Check answer support and make source passages easy to inspect."
+          "label": "Feature",
+          "text": "Inspect crease patterns, change paper colors and studio themes, and import or export geometry."
         }
       ],
       "reflection": [
         {
-          "label": "Importance",
-          "text": "Helps developers find relevant troubleshooting knowledge efficiently."
+          "label": "Design consideration",
+          "text": "Linked creases let a sheet change shape as a coordinated structure."
         },
         {
-          "label": "Difficulty",
-          "text": "The interface, API, search service, and generated answer must work together."
-        },
-        {
-          "label": "Skills",
-          "text": "System integration, retrieval evaluation, and analytical thinking."
-        },
-        {
-          "label": "Skills",
-          "text": "Planning a manageable scope and explaining technical evidence."
+          "label": "Design consideration",
+          "text": "The simulation explores folding behavior; it is not a step-by-step tutorial or a fabrication guarantee."
         }
       ]
     },
     {
-      "id": "pipeline",
-      "name": "ML Classifier & Quality Pipeline",
-      "status": "Planned capstone",
-      "description": "A planned, repeatable workflow for classifying project descriptions and checking a prediction service.",
+      "id": "molecular",
+      "name": "Molecular Explorer",
+      "status": "Personal project",
+      "description": "Explore biological molecules in an interactive 3D viewer, from hemoglobin and DNA to proteins and RNA.",
       "source": {
-        "label": "Made With ML",
-        "url": "https://github.com/GokuMohandas/Made-With-ML"
+        "label": "",
+        "url": ""
       },
       "image": {
-        "src": "assets/images/pipeline.svg",
-        "alt": "Concept illustration of a data table, model code, and checked results"
+        "src": "assets/images/molecular.webp",
+        "alt": "Molecular Explorer showing a three-dimensional molecular structure alongside its molecule selection menu"
       },
       "technologies": [
-        "Python",
-        "scikit-learn",
-        "PyTorch",
-        "MLflow",
-        "FastAPI",
-        "Ray Serve",
-        "Docker",
-        "GitHub Actions"
+        "JavaScript",
+        "WebGL",
+        "Mol*",
+        "Molecular visualization"
       ],
       "demoUrl": "https://fl1034.github.io/Molecule/",
       "roleAndChallenge": [
         {
-          "label": "Planned role",
-          "text": "Adapt training, evaluation, API serving, and packaging."
+          "label": "Feature",
+          "text": "Select among nine molecular examples, then rotate and zoom to inspect their structures."
         },
         {
-          "label": "Anticipated challenge",
-          "text": "A trained model can fail when deployment uses different preprocessing."
-        },
-        {
-          "label": "Planned response",
-          "text": "Share preprocessing logic and validate the API\u2019s inputs."
-        },
-        {
-          "label": "Planned response",
-          "text": "Test the packaged service and compare simple and complex models."
+          "label": "Feature",
+          "text": "Import molecular files and capture images from the viewer."
         }
       ],
       "reflection": [
         {
-          "label": "Importance",
-          "text": "Makes an ML application reproducible and maintainable after its first prediction."
+          "label": "Design consideration",
+          "text": "Three-dimensional views make molecular shape and organization easier to explore."
         },
         {
-          "label": "Difficulty",
-          "text": "Data, model artifacts, tests, and deployment must remain consistent."
-        },
-        {
-          "label": "Skills",
-          "text": "Model evaluation, API development, and container fundamentals."
-        },
-        {
-          "label": "Skills",
-          "text": "Software organization, troubleshooting, and sound technical judgement."
+          "label": "Design consideration",
+          "text": "A focused viewer keeps the structure prominent while leaving molecule selection and import controls close at hand."
         }
       ]
     }
@@ -391,12 +353,12 @@
       "penguins"
     ],
     "experienceHeading": "Selected portfolio projects",
-    "nextSteps": "Two final-year capstones are planned. Practical experience is represented by projects rather than employment."
+    "nextSteps": "Explore the live demos for all five projects. Practical experience is represented by projects rather than employment."
   },
   "contact": {
     "invitation": "I welcome junior development opportunities, student collaborations, and constructive feedback on my projects.",
     "availability": "Interested in graduate opportunities aligned with diploma completion in 2027.",
-    "sampleEmailNotice": "Sample email address \u2014 replace it with your own in portfolio.json.",
+    "sampleEmailNotice": "Sample email address — replace it with your own in portfolio.json.",
     "formNote": "Prepare a draft for review. Nothing is sent automatically."
   },
   "site": {
@@ -426,12 +388,12 @@
       "roleChallenge": "My role & challenge faced",
       "reflection": "Reflection",
       "demo": "Live demo",
-      "demoPending": "Live demo \u2014 link pending",
+      "demoPending": "Live demo — link pending",
       "source": "Based on",
       "conceptImage": "Concept illustration",
       "viewProjects": "View my projects",
-      "viewResume": "View r\u00e9sum\u00e9",
-      "printResume": "Print / save r\u00e9sum\u00e9 as PDF",
+      "viewResume": "View résumé",
+      "printResume": "Print / save résumé as PDF",
       "education": "Education",
       "careerGoal": "Career goal",
       "interests": "Outside coursework",
@@ -451,16 +413,16 @@
       "close": "Close",
       "draftReady": "Draft prepared. No message has been sent.",
       "copied": "Draft copied. No message has been sent.",
-      "copyFallback": "Draft selected. Use your device\u2019s Copy command.",
+      "copyFallback": "Draft selected. Use your device’s Copy command.",
       "whitespaceError": "Enter a name, subject, and message; spaces alone are not enough.",
       "sampleDraftNotice": "This portfolio uses a sample address. You can copy this draft; no message has been sent.",
       "realDraftNotice": "Review the draft, then open your email app to send it. No message has been sent yet.",
       "about": "About",
       "skills": "Skills",
       "projects": "Projects",
-      "resume": "R\u00e9sum\u00e9",
+      "resume": "Résumé",
       "contact": "Contact"
     },
-    "footer": "Student portfolio \u00b7 2026"
+    "footer": "Student portfolio · 2026"
   }
 }

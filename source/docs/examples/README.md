@@ -14,3 +14,10 @@ view with rotation stopped. The screenshot retains its Simulation indicator.
 two boards. Analysis mode returned a stale-position error and import/hint controls
 were unavailable during capture, so the image shows the initial position. No AI
 match was started. The image is a browser capture of the board area.
+
+Origami Lab was captured at `/Origami-Demo/` with Miura meadow selected, Linen
+studio theme, Cornflower Blue paper, and the fold control at 65%.
+
+Molecular Explorer was captured at `/Molecule/` after Hemoglobin finished loading,
+showing the colored ribbon structure and molecule menu. `/Molecular/` returned
+HTTP 404 when checked, so the portfolio uses the working `/Molecule/` URL.
