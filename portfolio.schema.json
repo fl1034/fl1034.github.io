@@ -30,16 +30,12 @@
             },
             "caption": {
               "type": "string"
-            },
-            "placeholderLabel": {
-              "type": "string"
             }
           },
           "required": [
             "src",
             "alt",
-            "caption",
-            "placeholderLabel"
+            "caption"
           ]
         },
         "socialLinks": {

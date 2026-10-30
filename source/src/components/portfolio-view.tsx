@@ -42,9 +42,8 @@ export function PortfolioView({data}: { data: Portfolio }) {
                     <BlurFade delay={0.04} className="order-1 sm:order-2 shrink-0">
                         <figure className="space-y-3 text-center w-28 sm:w-32">
                             <Avatar className="size-28 sm:size-32 border rounded-full shadow-lg ring-4 ring-muted">
-                                <AvatarImage alt={profile.photo.alt} src={safeImage(profile.photo.src)}/>
+                                <AvatarImage className="object-cover" alt={profile.photo.alt} src={safeImage(profile.photo.src)}/>
                                 <AvatarFallback>{initials}</AvatarFallback>
-                                {profile.photo.src === "assets/images/photo-placeholder.svg" && <span aria-hidden="true" className="absolute bottom-1 inset-x-0 text-[5px] tracking-widest text-[#5f4940]">{profile.photo.placeholderLabel}</span>}
                             </Avatar>
                             {profile.photo.caption && <figcaption
                                 className="text-xs text-muted-foreground">{profile.photo.caption}</figcaption>}

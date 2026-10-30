@@ -7,10 +7,9 @@
     "location": "Regina, Saskatchewan, Canada",
     "email": "fl1034nk@gmail.com",
     "photo": {
-      "src": "assets/images/photo-placeholder.svg",
-      "alt": "Professional photo placeholder",
-      "caption": "Photo placeholder",
-      "placeholderLabel": "PHOTO PLACEHOLDER"
+      "src": "assets/images/feitian-li-headshot.png",
+      "alt": "Feitian Li",
+      "caption": ""
     },
     "socialLinks": [
       {

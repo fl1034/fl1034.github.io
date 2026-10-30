@@ -6,7 +6,7 @@ completion and validation. All site-owned copy comes from this JSON.
 
 | Section | Contents |
 | --- | --- |
-| `profile` | Name, role, location, email, photo alt text, caption and tiny placeholder label |
+| `profile` | Name, role, location, email, photo path, alt text and optional caption |
 | `about`, `education`, `skills`, `resume`, `contact` | Main page content and downloadable résumé |
 | `projects` | Five cards: titles, descriptions, image alt text, tags, contribution/reflection paragraphs, credits and links |
 | `site.labels`, `site.navigation`, `site.footer` | Section headings, buttons, tooltips, menus and footer line |
