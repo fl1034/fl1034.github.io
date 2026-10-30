@@ -23,9 +23,11 @@
     ]
   },
   "about": {
-    "introduction": "I got into programming because I wanted to understand the software that keeps the world running: compilers, operating systems, and database engines. That curiosity drew me to computer science, and I’m now studying Computer System Technology at Saskatchewan Polytechnic. I want to understand these systems deeply enough to build fast, efficient software of my own.",
+    "introduction": "I’m Feitian, a Computer System Technology student at Saskatchewan Polytechnic in Regina, expecting to graduate in 2027. My background combines programming and database coursework with hands-on web development and AI tooling, supported by CompTIA A+ and Network+ certifications.",
     "story": [
-      "AI has made that curiosity even more exciting. Being able to describe the mathematical behavior of a program and work with AI to turn it into code lets me spend less time on routine implementation and explore more ambitious ideas. I’m interested in how far that can take me, especially in building high-performance software."
+      "I was drawn to programming by the enormous systems we rely on every day: compilers, operating systems, and database engines. I wanted to know how they worked, and that curiosity has grown into an ambition to build high-performance software myself.",
+      "AI adds another dimension to that ambition. Working with coding agents lets me spend less time on routine implementation and more time defining the logic and mathematical behavior of what I want to build. I’m looking for a junior developer role where I can put that approach to work, learn from experienced engineers, and deepen my understanding of the systems underneath the applications.",
+      "Outside programming, I enjoy photography, cooking, and building LEGO sets. LEGO is the one I’d happily call myself a master at."
     ]
   },
   "education": [
