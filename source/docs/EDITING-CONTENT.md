@@ -7,7 +7,7 @@ completion and validation. All site-owned copy comes from this JSON.
 | Section | Contents |
 | --- | --- |
 | `profile` | Name, role, location, email, photo alt text, caption and tiny placeholder label |
-| `about`, `education`, `skills`, `resume`, `contact` | Main page content and printed résumé |
+| `about`, `education`, `skills`, `resume`, `contact` | Main page content and downloadable résumé |
 | `projects` | Five cards: titles, descriptions, badges, image alt text, tags, contribution/reflection paragraphs, credits and links |
 | `projectsIntro`, `sampleNotice` | Copy above the grid |
 | `site.labels`, `site.navigation`, `site.footer` | Section headings, buttons, tooltips, menus and footer line |
@@ -70,3 +70,19 @@ including editable titles, skill labels, paragraphs, and project links. These
 records summarize the author's account; they are not original test logs.
 Keep `projectId` values matched to an existing project. Update `site.footer`
 with the actual date when revising the published portfolio.
+
+## Downloadable résumé and featured skill
+
+`skills.featured` controls the prominent AI coding agents and harnesses panel.
+`skills.groups` contains the language list and other technical groups.
+
+The on-page interactive résumé has been removed. The hero download link uses
+`resume.downloadUrl`; résumé prose, skill lines, project bullets, and headings
+live under `resume`. Shared identity and education come from `profile` and
+`education`. Project names and links are resolved through `projectId`.
+
+`npm run resume:build` generates `public/assets/feitian-li-resume.pdf` with
+selectable text and clickable links. Every production build regenerates it
+automatically. After editing résumé content during development, run this command
+to refresh the PDF. The generator fails if copy exceeds its one-page layout, so
+excess text cannot silently disappear. Do not edit the generated PDF directly.

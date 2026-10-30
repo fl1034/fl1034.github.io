@@ -2,11 +2,10 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import {Badge} from "@/components/ui/badge";
 import {ProjectCard} from "@/components/project-card";
 import {ContactForm} from "@/components/contact-form";
 import Navbar from "@/components/navbar";
-import {ArrowDown, ArrowUpRight, GraduationCap, MapPin, Printer} from "lucide-react";
+import {ArrowDown, ArrowUpRight, GraduationCap, MapPin} from "lucide-react";
 import {emailHref, safeImage, safeWebUrl, type Portfolio} from "@/lib/portfolio";
 
 export function PortfolioView({data}: { data: Portfolio }) {
@@ -35,7 +34,7 @@ export function PortfolioView({data}: { data: Portfolio }) {
                             <a href="#projects"
                                className="inline-flex gap-2 items-center rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-85">{l.viewProjects}<ArrowDown
                                 className="size-3.5" aria-hidden="true"/></a>
-                            <a href="#resume"
+                            <a href={safeImage(resume.downloadUrl)} download
                                className="inline-flex items-center rounded-lg border border-border px-4 py-2.5 text-sm font-medium hover:bg-muted">{l.viewResume}</a>
                         </BlurFade>
                     </div>
@@ -102,6 +101,13 @@ export function PortfolioView({data}: { data: Portfolio }) {
             <section id="skills" className="scroll-mt-8 space-y-6">
                 <BlurFade className="space-y-4"><h2 className="text-xl font-bold">{l.skills}</h2><p
                     className="text-muted-foreground leading-relaxed">{skills.introduction}</p></BlurFade>
+                <article className="relative overflow-hidden rounded-2xl border-2 border-indigo-500/50 bg-gradient-to-br from-indigo-500/15 via-violet-500/10 to-sky-500/15 p-6 space-y-4 shadow-sm">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-indigo-700 dark:text-indigo-300">{skills.featured.eyebrow}</p>
+                    <h3 className="text-xl font-bold tracking-tight">{skills.featured.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{skills.featured.description}</p>
+                    <ul className="flex flex-wrap gap-2">{skills.featured.items.map(item => <li key={item} className="rounded-full border border-indigo-500/25 bg-background/70 px-3 py-1 text-xs font-medium">{item}</li>)}</ul>
+                    <a className="inline-block text-sm font-medium underline underline-offset-4" href={`#evidence-${skills.featured.evidenceId}`}>{skills.featured.evidenceLabel}</a>
+                </article>
                 {skills.groups.map(group => <BlurFade key={group.name} inView className="space-y-3">
                     <h3 className="text-sm font-semibold">{group.name}</h3>
                     <ul className="flex flex-wrap gap-2">{group.items.map(item => <li key={item}><span
@@ -133,35 +139,6 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 </div>
                 <BlurFade inView className="space-y-3"><h3 className="text-sm font-semibold">{l.certifications}</h3><p
                     className="text-sm text-muted-foreground leading-relaxed">{skills.certifications}</p></BlurFade>
-            </section>
-            <section id="resume" className="scroll-mt-8 space-y-5 border-t border-border pt-10">
-                <BlurFade inView className="space-y-5">
-                    <div className="flex flex-wrap items-center justify-between gap-3"><h2
-                        className="text-xl font-bold">{l.resume}</h2>
-                        <button type="button"
-                                className="print-button inline-flex items-center gap-2 border border-border rounded-lg px-3 py-2 text-xs font-medium hover:bg-muted"
-                                onClick={() => window.print()}><Printer className="size-3.5"
-                                                                        aria-hidden="true"/>{l.printResume}</button>
-                    </div>
-                    <div className="print-only"><h1>{profile.name}</h1><p>{profile.role}{ui.format.listSeparator}{profile.location}</p>
-                        <p>{profile.email}</p></div>
-                    <p className="text-muted-foreground leading-relaxed">{resume.summary}</p>
-                    <ul className="flex flex-wrap gap-2">{resume.coreSkills.map(item => <li key={item}><Badge
-                        variant="secondary">{item}</Badge></li>)}</ul>
-                    <div className="space-y-2"><h3
-                        className="text-sm font-semibold">{l.education}</h3>{education.map(item => <p
-                        key={item.institution}
-                        className="text-sm text-muted-foreground">{item.institution}{ui.format.listSeparator}{item.qualification}{ui.format.listSeparator}{item.startYear}{ui.format.yearSeparator}{item.endYear}</p>)}
-                    </div>
-                    <div className="space-y-3"><h3 className="text-sm font-semibold">{resume.experienceHeading}</h3>
-                        <ul className="space-y-3 text-sm text-muted-foreground">{projects.filter(p => resume.selectedProjectIds.includes(p.id)).map(p =>
-                            <li key={p.id}><a href={`#project-${p.id}`}
-                                              className="font-medium text-foreground underline underline-offset-4">{p.name}</a>
-                                <p className="leading-relaxed mt-1">{p.description}</p><p
-                                    className="text-xs mt-1">{p.technologies.join(ui.format.listSeparator)}</p></li>)}</ul>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{resume.nextSteps}</p>
-                </BlurFade>
             </section>
             <section id="contact" className="scroll-mt-8 space-y-5 border-t border-border pt-10">
                 <BlurFade inView className="space-y-5">

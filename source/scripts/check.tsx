@@ -73,3 +73,11 @@ for (const evidence of data.skills.softEvidence) {
     assert.ok(doc.getElementById(`project-${evidence.projectId}`), "Evidence links to an existing project");
 }
 console.log("Passed: complete project narratives and linked soft-skill records.");
+
+assert.equal(doc.querySelector('#resume'), null, "Duplicate interactive resume is removed");
+assert.equal(doc.querySelector('a[download]')?.getAttribute('href'), data.resume.downloadUrl);
+assert.ok(doc.querySelector('#skills')?.textContent?.includes(data.skills.featured.title));
+for (const skill of ['Rust', 'C/C++', 'JavaScript / TypeScript', 'Go']) {
+    assert.ok(doc.querySelector('#skills')?.textContent?.includes(skill));
+}
+console.log("Passed: downloadable resume, requested languages, featured agent skills.");

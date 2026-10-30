@@ -306,10 +306,6 @@ a:focus-visible, button:focus-visible {
     transform: translateY(0);
 }
 
-.print-only {
-    display: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -340,29 +336,14 @@ a:focus-visible, button:focus-visible {
         color: black !important;
     }
 
-    main > :not(#resume), .portfolio-dock, .skip-link, .print-button, body > div[aria-hidden] {
+    .portfolio-dock, .skip-link, body > div[aria-hidden] {
         display: none !important;
     }
 
-    #resume {
-        border: 0;
-        padding: 0;
-    }
-
-    #resume > div {
+    main [style] {
         opacity: 1 !important;
         filter: none !important;
         transform: none !important;
-    }
-
-    .print-only {
-        display: block;
-        margin-bottom: 1.5rem;
-    }
-
-    .print-only h1 {
-        font-size: 1.75rem;
-        font-weight: 700;
     }
 
     a {

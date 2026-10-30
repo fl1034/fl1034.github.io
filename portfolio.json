@@ -267,9 +267,21 @@
     "introduction": "My projects explore numerical simulation, browser-based data tools, AI integration, and scientific visualization. The examples below connect those skills to specific work.",
     "groups": [
       {
+        "name": "Programming languages",
+        "items": [
+          "Rust",
+          "C/C++",
+          "JavaScript / TypeScript",
+          "Go",
+          "SQL",
+          "Python",
+          "Java"
+        ],
+        "level": "Languages used across personal projects, coursework, and independent learning."
+      },
+      {
         "name": "Simulation & visualization",
         "items": [
-          "JavaScript",
           "WebGL",
           "Finite element method",
           "Mol*"
@@ -339,25 +351,67 @@
           "This decision taught me to assess the data requirements before committing to the full feature set. The molecular viewer is evidence of the revised outcome, not a reaction or folding simulator."
         ]
       }
-    ]
+    ],
+    "featured": {
+      "eyebrow": "Featured capability",
+      "title": "AI coding agents & harnesses",
+      "description": "Practical use of mainstream AI coding agents and agent harnesses for implementation, debugging, and validation. I combine agent-assisted work with documentation, targeted experiments, and tests to check the results.",
+      "items": [
+        "Agent-assisted development",
+        "Debugging & investigation",
+        "Experiment design",
+        "Output validation"
+      ],
+      "evidenceLabel": "See how I validated the origami solver",
+      "evidenceId": "origami-debugging"
+    }
   },
   "resume": {
-    "summary": "Computer System Technology student seeking a junior developer role, with project experience implementing a numerical solver, building a browser database UI and changeset algorithm, and adapting an open-source game for AI players.",
-    "coreSkills": [
-      "JavaScript",
-      "SQL",
-      "Numerical simulation",
-      "Database state management",
-      "AI integration",
-      "Debugging"
+    "downloadUrl": "assets/feitian-li-resume.pdf",
+    "summary": "Computer System Technology student seeking a junior developer role. Project experience includes implementing a research-derived numerical solver, building browser database tools, and adapting an open-source game for AI players. Uses mainstream AI coding agents and harnesses alongside documentation, experiments, and tests.",
+    "portfolioLabel": "Portfolio",
+    "portfolioUrl": "https://fl1034.github.io/",
+    "summaryHeading": "Profile",
+    "skillsHeading": "Technical skills",
+    "projectsHeading": "Selected projects",
+    "educationHeading": "Education",
+    "skillLines": [
+      {
+        "label": "Languages",
+        "text": "Rust, C/C++, JavaScript / TypeScript, Go, SQL, Python, Java"
+      },
+      {
+        "label": "AI agent tooling",
+        "text": "Mainstream coding agents and harnesses; agent-assisted implementation, debugging, numerical experiments, and validation."
+      },
+      {
+        "label": "Project technologies",
+        "text": "WebGL, DuckDB, WebAssembly, finite element methods, retrieval-augmented generation."
+      }
     ],
-    "selectedProjectIds": [
-      "origami",
-      "penguins",
-      "chatbot"
-    ],
-    "experienceHeading": "Selected portfolio projects",
-    "nextSteps": "Explore the live demos for all five projects. Practical experience is represented by projects rather than employment."
+    "projects": [
+      {
+        "projectId": "origami",
+        "bullets": [
+          "Implemented a paper-folding solver from a published finite element method, learning FEM through AI-assisted small-scale numerical experiments.",
+          "Investigated mobile convergence failures affecting roughly 30% of development test cases; traced the issue to FP16 storage precision and resolved the affected failures."
+        ]
+      },
+      {
+        "projectId": "penguins",
+        "bullets": [
+          "Built the UI and a snapshot-based changeset algorithm for a miniature browser database, prioritizing compute and query efficiency.",
+          "Passed the existing codebase’s insert, edit, and deletion tests; integrated with an existing SQL engine."
+        ]
+      },
+      {
+        "projectId": "chatbot",
+        "bullets": [
+          "Adapted an open-source 5D chess game to supply rules and game state to AI players, with retrieval limited to two queries per turn under 50 ms each.",
+          "Observed time travel and timeline branching in approximately 80% of development test cases; token costs limited completed games."
+        ]
+      }
+    ]
   },
   "contact": {
     "invitation": "I welcome junior development opportunities, student collaborations, and constructive feedback on my projects.",
@@ -396,8 +450,7 @@
       "source": "Project reference",
       "conceptImage": "Concept illustration",
       "viewProjects": "View my projects",
-      "viewResume": "View résumé",
-      "printResume": "Print / save résumé as PDF",
+      "viewResume": "Download résumé (PDF)",
       "education": "Education",
       "careerGoal": "Career goal",
       "interests": "Outside coursework",

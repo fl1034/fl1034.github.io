@@ -344,6 +344,40 @@
               "paragraphs"
             ]
           }
+        },
+        "featured": {
+          "type": "object",
+          "properties": {
+            "eyebrow": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "evidenceLabel": {
+              "type": "string"
+            },
+            "evidenceId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "eyebrow",
+            "title",
+            "description",
+            "items",
+            "evidenceLabel",
+            "evidenceId"
+          ]
         }
       },
       "required": [
@@ -352,40 +386,88 @@
         "workingStrengths",
         "certifications",
         "technicalEvidence",
-        "softEvidence"
+        "softEvidence",
+        "featured"
       ]
     },
     "resume": {
       "type": "object",
       "properties": {
+        "downloadUrl": {
+          "type": "string"
+        },
         "summary": {
           "type": "string"
         },
-        "coreSkills": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "selectedProjectIds": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "experienceHeading": {
+        "portfolioLabel": {
           "type": "string"
         },
-        "nextSteps": {
+        "portfolioUrl": {
           "type": "string"
+        },
+        "summaryHeading": {
+          "type": "string"
+        },
+        "skillsHeading": {
+          "type": "string"
+        },
+        "projectsHeading": {
+          "type": "string"
+        },
+        "educationHeading": {
+          "type": "string"
+        },
+        "skillLines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "text"
+            ]
+          }
+        },
+        "projects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "projectId": {
+                "type": "string"
+              },
+              "bullets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "projectId",
+              "bullets"
+            ]
+          }
         }
       },
       "required": [
+        "downloadUrl",
         "summary",
-        "coreSkills",
-        "selectedProjectIds",
-        "experienceHeading",
-        "nextSteps"
+        "portfolioLabel",
+        "portfolioUrl",
+        "summaryHeading",
+        "skillsHeading",
+        "projectsHeading",
+        "educationHeading",
+        "skillLines",
+        "projects"
       ]
     },
     "contact": {
@@ -471,9 +553,6 @@
             "viewResume": {
               "type": "string"
             },
-            "printResume": {
-              "type": "string"
-            },
             "education": {
               "type": "string"
             },
@@ -538,7 +617,6 @@
             "conceptImage",
             "viewProjects",
             "viewResume",
-            "printResume",
             "education",
             "careerGoal",
             "interests",
