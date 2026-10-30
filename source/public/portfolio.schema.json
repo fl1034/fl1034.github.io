@@ -356,15 +356,6 @@
             "evidenceLabel",
             "evidenceId"
           ]
-        },
-        "languageIcons": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
         }
       },
       "required": [
@@ -372,8 +363,7 @@
         "certifications",
         "technicalEvidence",
         "softEvidence",
-        "featured",
-        "languageIcons"
+        "featured"
       ]
     },
     "resume": {

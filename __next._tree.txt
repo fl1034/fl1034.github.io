@@ -1,3 +1,3 @@
-:HL["./_next/static/css/8752977b909ba322.css","style"]
+:HL["./_next/static/css/a38903ad2fc23568.css","style"]
 :HL["assets/fonts/geist.css","style"]
-0:{"buildId":"WM9cT4J-bGfM05j4oOwrC","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"YAQGpKFHNDgW9rLzlOVZB","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

@@ -95,6 +95,3 @@ Its original proportions and colors are preserved on both themes.
 
 Header contact icons use `profile.email` and the GitHub entry in
 `profile.socialLinks`. Hover labels follow the same JSON values.
-`skills.languageIcons` maps language labels to local Devicon SVG assets;
-paired languages retain one combined label. SQL uses a generic database icon.
-The Devicon license is included beside the SVGs in `public/assets/icons/languages/`.

@@ -316,29 +316,6 @@
       "description": "Practical use of mainstream AI coding agents and agent harnesses for implementation, debugging, and validation. I combine agent-assisted work with documentation, targeted experiments, and tests to check the results.",
       "evidenceLabel": "See how I validated the origami solver",
       "evidenceId": "origami-debugging"
-    },
-    "languageIcons": {
-      "Rust": [
-        "assets/icons/languages/rust.svg"
-      ],
-      "C/C++": [
-        "assets/icons/languages/c.svg",
-        "assets/icons/languages/cplusplus.svg"
-      ],
-      "JavaScript / TypeScript": [
-        "assets/icons/languages/javascript.svg",
-        "assets/icons/languages/typescript.svg"
-      ],
-      "Go": [
-        "assets/icons/languages/go.svg"
-      ],
-      "SQL": [],
-      "Python": [
-        "assets/icons/languages/python.svg"
-      ],
-      "Java": [
-        "assets/icons/languages/java.svg"
-      ]
     }
   },
   "resume": {
