@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- Static portfolio assets retain their original proportions. */
 "use client";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -5,7 +6,7 @@ import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {ProjectCard} from "@/components/project-card";
 import {ContactForm} from "@/components/contact-form";
 import Navbar from "@/components/navbar";
-import {ArrowDown, ArrowUpRight, GraduationCap, MapPin} from "lucide-react";
+import {ArrowDown, ArrowUpRight, MapPin} from "lucide-react";
 import {emailHref, safeImage, safeWebUrl, type Portfolio} from "@/lib/portfolio";
 
 export function PortfolioView({data}: { data: Portfolio }) {
@@ -64,10 +65,11 @@ export function PortfolioView({data}: { data: Portfolio }) {
             <section id="education" className="scroll-mt-8 space-y-6">
                 <BlurFade><h2 className="text-xl font-bold">{l.education}</h2></BlurFade>
                 {education.map(item => <BlurFade key={item.institution}>
-                    <div className="flex items-start gap-4">
-                        <div
-                            className="size-10 border rounded-full shadow ring-2 ring-border flex items-center justify-center shrink-0">
-                            <GraduationCap className="size-5" aria-hidden="true"/></div>
+                    <div className="flex flex-col sm:flex-row items-start gap-5">
+                        <div className="w-36 shrink-0 overflow-hidden rounded-lg border border-border bg-white p-2">
+                            <img src={safeImage(item.logo.src)} alt={item.logo.alt} width="300" height="155"
+                                 className="block h-auto w-full object-contain" loading="lazy"/>
+                        </div>
                         <div className="flex-1 min-w-0 space-y-2">
                             <div className="flex flex-col sm:flex-row sm:justify-between gap-1"><h3
                                 className="font-semibold">{item.institution}</h3><p

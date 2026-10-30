@@ -52,7 +52,11 @@
         "Web fundamentals",
         "Debugging",
         "Collaborative Git workflows"
-      ]
+      ],
+      "logo": {
+        "src": "assets/images/saskatchewan-polytechnic.webp",
+        "alt": "Saskatchewan Polytechnic logo"
+      }
     }
   ],
   "projectsIntro": "Browser-based experiments in simulation, databases, AI, and scientific visualization—with the engineering decisions behind them.",

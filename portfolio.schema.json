@@ -125,6 +125,21 @@
             "items": {
               "type": "string"
             }
+          },
+          "logo": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "src",
+              "alt"
+            ]
           }
         },
         "required": [
@@ -133,7 +148,8 @@
           "startYear",
           "endYear",
           "completion",
-          "learning"
+          "learning",
+          "logo"
         ]
       }
     },

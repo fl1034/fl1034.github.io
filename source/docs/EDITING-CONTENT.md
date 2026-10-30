@@ -86,3 +86,8 @@ selectable text and clickable links. Every production build regenerates it
 automatically. After editing résumé content during development, run this command
 to refresh the PDF. The generator fails if copy exceeds its one-page layout, so
 excess text cannot silently disappear. Do not edit the generated PDF directly.
+
+The education logo is configured through `education[].logo.src` and `.alt`.
+The Saskatchewan Polytechnic ribbon logo is sourced from the institution’s
+official website: https://saskpolytech.ca/_assets/img/Saskatchewan_Polytechnic_Logo.webp.
+Its original proportions and colors are preserved on both themes.
