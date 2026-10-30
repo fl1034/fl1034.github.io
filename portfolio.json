@@ -59,8 +59,6 @@
       }
     }
   ],
-  "projectsIntro": "Browser-based experiments in simulation, databases, AI, and scientific visualization—with the engineering decisions behind them.",
-  "sampleNotice": "Screenshots captured from the live demos. Internet Pulse uses simulation mode; SQL/REPL uses sample data.",
   "projects": [
     {
       "id": "origami",
@@ -263,7 +261,6 @@
     }
   ],
   "skills": {
-    "introduction": "My projects explore numerical simulation, browser-based data tools, AI integration, and scientific visualization. The examples below connect those skills to specific work.",
     "groups": [
       {
         "name": "Programming languages",
@@ -275,8 +272,7 @@
           "SQL",
           "Python",
           "Java"
-        ],
-        "level": "Languages used across personal projects, coursework, and independent learning."
+        ]
       },
       {
         "name": "Simulation & visualization",
@@ -284,8 +280,7 @@
           "WebGL",
           "Finite element method",
           "Mol*"
-        ],
-        "level": "Project experience implementing a paper-folding solver and exploring interactive scientific visualization."
+        ]
       },
       {
         "name": "Browser data tools",
@@ -294,8 +289,7 @@
           "DuckDB",
           "WebAssembly",
           "Snapshot-based changesets"
-        ],
-        "level": "Built a SQL workspace UI and a changeset algorithm around an existing database engine."
+        ]
       },
       {
         "name": "AI integration & validation",
@@ -304,8 +298,7 @@
           "Retrieval-augmented generation",
           "Numerical experiments",
           "Regression tests"
-        ],
-        "level": "Adapted a game for AI players, used AI-assisted experiments to check a solver, and validated database changes against existing tests."
+        ]
       }
     ],
     "certifications": "CompTIA A+ · CompTIA Network+",
@@ -346,15 +339,8 @@
       }
     ],
     "featured": {
-      "eyebrow": "Featured capability",
       "title": "AI coding agents & harnesses",
       "description": "Practical use of mainstream AI coding agents and agent harnesses for implementation, debugging, and validation. I combine agent-assisted work with documentation, targeted experiments, and tests to check the results.",
-      "items": [
-        "Agent-assisted development",
-        "Debugging & investigation",
-        "Experiment design",
-        "Output validation"
-      ],
       "evidenceLabel": "See how I validated the origami solver",
       "evidenceId": "origami-debugging"
     }

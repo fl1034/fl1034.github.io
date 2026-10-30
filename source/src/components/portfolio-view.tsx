@@ -86,8 +86,6 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 <BlurFade className="flex flex-col gap-4 items-center text-center">
                     <div aria-hidden="true" className="w-full h-px bg-linear-to-r from-transparent via-border to-transparent"/>
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{ui.projectsHeading}</h2>
-                    <p className="text-muted-foreground leading-relaxed max-w-xl">{data.projectsIntro}</p>
-                    <p className="text-xs text-muted-foreground leading-relaxed max-w-xl">{data.sampleNotice}</p>
                 </BlurFade>
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 items-start">
                     {projects.map((project, i) => <BlurFade key={project.id} delay={0.04 + (i % 2) * 0.05} inView
@@ -96,13 +94,10 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 </div>
             </section>
             <section id="skills" className="scroll-mt-8 space-y-6">
-                <BlurFade className="space-y-4"><h2 className="text-xl font-bold">{l.skills}</h2><p
-                    className="text-muted-foreground leading-relaxed">{skills.introduction}</p></BlurFade>
+                <BlurFade><h2 className="text-xl font-bold">{l.skills}</h2></BlurFade>
                 <article className="relative overflow-hidden rounded-2xl border-2 border-indigo-500/50 bg-gradient-to-br from-indigo-500/15 via-violet-500/10 to-sky-500/15 p-6 space-y-4 shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-indigo-700 dark:text-indigo-300">{skills.featured.eyebrow}</p>
                     <h3 className="text-xl font-bold tracking-tight">{skills.featured.title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">{skills.featured.description}</p>
-                    <ul className="flex flex-wrap gap-2">{skills.featured.items.map(item => <li key={item} className="rounded-full border border-indigo-500/25 bg-background/70 px-3 py-1 text-xs font-medium">{item}</li>)}</ul>
                     <a className="inline-block text-sm font-medium underline underline-offset-4" href={`#evidence-${skills.featured.evidenceId}`}>{skills.featured.evidenceLabel}</a>
                 </article>
                 {skills.groups.map(group => <BlurFade key={group.name} inView className="space-y-3">
@@ -110,7 +105,6 @@ export function PortfolioView({data}: { data: Portfolio }) {
                     <ul className="flex flex-wrap gap-2">{group.items.map(item => <li key={item}><span
                         className="border bg-background border-border ring-2 ring-border/20 rounded-xl min-h-8 px-3 py-1 inline-flex items-center text-sm font-medium">{item}</span>
                     </li>)}</ul>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{group.level}</p>
                 </BlurFade>)}
                 <div className="space-y-4">
                     <h3 className="text-sm font-semibold">{l.technicalEvidence}</h3>

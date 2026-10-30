@@ -153,12 +153,6 @@
         ]
       }
     },
-    "projectsIntro": {
-      "type": "string"
-    },
-    "sampleNotice": {
-      "type": "string"
-    },
     "projects": {
       "type": "array",
       "items": {
@@ -265,9 +259,6 @@
     "skills": {
       "type": "object",
       "properties": {
-        "introduction": {
-          "type": "string"
-        },
         "groups": {
           "type": "array",
           "items": {
@@ -281,15 +272,11 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "level": {
-                "type": "string"
               }
             },
             "required": [
               "name",
-              "items",
-              "level"
+              "items"
             ]
           }
         },
@@ -354,20 +341,11 @@
         "featured": {
           "type": "object",
           "properties": {
-            "eyebrow": {
-              "type": "string"
-            },
             "title": {
               "type": "string"
             },
             "description": {
               "type": "string"
-            },
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
             },
             "evidenceLabel": {
               "type": "string"
@@ -377,17 +355,14 @@
             }
           },
           "required": [
-            "eyebrow",
             "title",
             "description",
-            "items",
             "evidenceLabel",
             "evidenceId"
           ]
         }
       },
       "required": [
-        "introduction",
         "groups",
         "certifications",
         "technicalEvidence",
@@ -900,8 +875,6 @@
     "profile",
     "about",
     "education",
-    "projectsIntro",
-    "sampleNotice",
     "projects",
     "skills",
     "resume",
