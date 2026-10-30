@@ -1,5 +1,6 @@
 import Link from "next/link";
 import content from "../../public/portfolio.json";
+import {emailHref} from "@/lib/portfolio";
 import {Home} from "lucide-react";
 
 import {Button} from "@/components/ui/button";
@@ -28,6 +29,10 @@ export default function NotFound() {
                     </div>
                 </div>
             </div>
+            <footer className="text-xs text-muted-foreground text-center space-y-2">
+                <p>{content.profile.name}{content.ui.format.listSeparator}{content.site.footer}</p>
+                <a className="underline underline-offset-4" href={emailHref(content.profile.email)}>{content.profile.email}</a>
+            </footer>
         </div>
     );
 }

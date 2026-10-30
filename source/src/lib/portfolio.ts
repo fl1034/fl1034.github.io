@@ -25,7 +25,7 @@ export function emailHref(email: string): string | undefined {
 export function validatePortfolio(value: unknown): asserts value is Portfolio {
     if (!value || typeof value !== "object") throw new Error("Invalid portfolio");
     const data = value as Portfolio;
-    if (typeof data.profile?.name !== "string" || typeof data.profile.email !== "string" || !Array.isArray(data.projects) || !Array.isArray(data.education) || !Array.isArray(data.skills?.groups) || !data.about || !data.site?.labels || !Array.isArray(data.site.navigation) || !data.contact || !data.resume || !data.ui?.contact || !data.ui.navigation || !data.ui.footer || !data.ui.format || !data.ui.metadata) throw new Error("Missing content");
+    if (typeof data.profile?.name !== "string" || typeof data.profile.email !== "string" || !Array.isArray(data.projects) || !Array.isArray(data.education) || !Array.isArray(data.skills?.groups) || !Array.isArray(data.skills?.technicalEvidence) || !Array.isArray(data.skills?.softEvidence) || !data.about || !data.site?.labels || !Array.isArray(data.site.navigation) || !data.contact || !data.resume || !data.ui?.contact || !data.ui.navigation || !data.ui.footer || !data.ui.format || !data.ui.metadata) throw new Error("Missing content");
     for (const p of data.projects) if (typeof p.name !== "string" || !Array.isArray(p.technologies) || !Array.isArray(p.roleAndChallenge) || !Array.isArray(p.reflection) || !p.image || !p.source) throw new Error("Invalid project");
 }
 

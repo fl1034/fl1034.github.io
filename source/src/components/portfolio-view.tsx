@@ -112,6 +112,25 @@ export function PortfolioView({data}: { data: Portfolio }) {
                 <BlurFade inView className="space-y-3"><h3 className="text-sm font-semibold">{l.workingStrengths}</h3><p
                     className="text-sm text-muted-foreground leading-relaxed">{skills.workingStrengths.join(ui.format.listSeparator)}</p>
                 </BlurFade>
+                <div className="space-y-4">
+                    <h3 className="text-sm font-semibold">{l.technicalEvidence}</h3>
+                    <div className="grid gap-4 sm:grid-cols-2">{skills.technicalEvidence.map(item =>
+                        <article key={item.projectId} className="rounded-xl border border-border bg-card p-5 space-y-3">
+                            <h4 className="font-medium text-sm"><a className="underline underline-offset-4" href={`#project-${item.projectId}`}>{item.title}</a></h4>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                        </article>)}</div>
+                </div>
+                <div className="space-y-4">
+                    <h3 className="text-sm font-semibold">{l.softEvidence}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{l.evidenceNote}</p>
+                    {skills.softEvidence.map(item => <article id={`evidence-${item.id}`} key={item.id}
+                        className="rounded-xl border border-border bg-card p-5 space-y-3 scroll-mt-8">
+                        <h4 className="font-semibold">{item.title}</h4>
+                        <p className="text-xs text-muted-foreground">{item.skills}</p>
+                        {item.paragraphs.map((paragraph, i) => <p key={i} className="text-sm text-muted-foreground leading-relaxed">{paragraph}</p>)}
+                        <a className="inline-block text-sm underline underline-offset-4" href={`#project-${item.projectId}`}>{l.evidenceProject}</a>
+                    </article>)}
+                </div>
                 <BlurFade inView className="space-y-3"><h3 className="text-sm font-semibold">{l.certifications}</h3><p
                     className="text-sm text-muted-foreground leading-relaxed">{skills.certifications}</p></BlurFade>
             </section>

@@ -289,13 +289,70 @@
         },
         "certifications": {
           "type": "string"
+        },
+        "technicalEvidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "projectId": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "projectId",
+              "title",
+              "text"
+            ]
+          }
+        },
+        "softEvidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "projectId": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "skills": {
+                "type": "string"
+              },
+              "paragraphs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "projectId",
+              "title",
+              "skills",
+              "paragraphs"
+            ]
+          }
         }
       },
       "required": [
         "introduction",
         "groups",
         "workingStrengths",
-        "certifications"
+        "certifications",
+        "technicalEvidence",
+        "softEvidence"
       ]
     },
     "resume": {
@@ -455,6 +512,18 @@
             },
             "contact": {
               "type": "string"
+            },
+            "technicalEvidence": {
+              "type": "string"
+            },
+            "softEvidence": {
+              "type": "string"
+            },
+            "evidenceNote": {
+              "type": "string"
+            },
+            "evidenceProject": {
+              "type": "string"
             }
           },
           "required": [
@@ -482,7 +551,11 @@
             "skills",
             "projects",
             "resume",
-            "contact"
+            "contact",
+            "technicalEvidence",
+            "softEvidence",
+            "evidenceNote",
+            "evidenceProject"
           ]
         },
         "footer": {

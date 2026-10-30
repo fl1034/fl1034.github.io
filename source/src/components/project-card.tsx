@@ -17,9 +17,7 @@ export function ProjectCard({project, labels, labelSeparator}: { project: Projec
         <div className="p-6 flex flex-col gap-6">
             <section data-project-section="description" className="space-y-3">
                 <h3 className="text-lg font-semibold tracking-tight leading-snug">{project.name}</h3>
-                <ul className="project-bullets">
-                    <li>{project.description}</li>
-                </ul>
+                <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
                 {source && <p className="text-xs text-muted-foreground leading-relaxed">{labels.source} <a
                     className="underline underline-offset-4 hover:text-foreground" href={source} target="_blank"
                     rel="noopener noreferrer">{project.source.label}</a></p>}
@@ -42,13 +40,13 @@ export function ProjectCard({project, labels, labelSeparator}: { project: Projec
             </section>
             <section data-project-section="role" className="space-y-3">
                 <h4 className="text-xs font-semibold tracking-wide uppercase">{labels.roleChallenge}</h4>
-                <ul className="project-bullets">{project.roleAndChallenge.map((item, i) => <li key={i}><strong
-                    className="font-medium text-foreground">{item.label}{labelSeparator}</strong>{item.text}</li>)}</ul>
+                <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">{project.roleAndChallenge.map((item, i) => <p key={i}>{item.label && <strong
+                    className="font-medium text-foreground">{item.label}{labelSeparator}</strong>}{item.text}</p>)}</div>
             </section>
             <section data-project-section="reflection" className="space-y-3">
                 <h4 className="text-xs font-semibold tracking-wide uppercase">{labels.reflection}</h4>
-                <ul className="project-bullets">{project.reflection.map((item, i) => <li key={i}><strong
-                    className="font-medium text-foreground">{item.label}{labelSeparator}</strong>{item.text}</li>)}</ul>
+                <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">{project.reflection.map((item, i) => <p key={i}><strong
+                    className="font-medium text-foreground">{item.label}{labelSeparator}</strong>{item.text}</p>)}</div>
             </section>
         </div>
     </article>;

@@ -8,7 +8,7 @@ completion and validation. All site-owned copy comes from this JSON.
 | --- | --- |
 | `profile` | Name, role, location, email, photo alt text, caption and tiny placeholder label |
 | `about`, `education`, `skills`, `resume`, `contact` | Main page content and printed résumé |
-| `projects` | Five cards: titles, descriptions, badges, image alt text, tags, feature/reflection labels, credits and links |
+| `projects` | Five cards: titles, descriptions, badges, image alt text, tags, contribution/reflection paragraphs, credits and links |
 | `projectsIntro`, `sampleNotice` | Copy above the grid |
 | `site.labels`, `site.navigation`, `site.footer` | Section headings, buttons, tooltips, menus and footer line |
 | `ui.projectsHeading`, `ui.footer` | Large project heading and template credit |
@@ -54,3 +54,19 @@ page and form copy is fetched at runtime from the corresponding public JSON.
 
 Commit the source and generated files, then push `master` to deploy GitHub Pages.
 The export command does not perform Git operations.
+
+## Project case studies and skill evidence
+
+Projects are ordered in the JSON. Each keeps five content groups: description,
+technologies, demo artifact, contribution/challenge narrative, and reflection.
+`roleAndChallenge` paragraphs use an empty `label` for uninterrupted prose;
+`reflection` labels introduce the takeaway and explain the demo artifact.
+Write context, your contribution, actions, and outcomes naturally—STAR headings
+are not required. Keep approximate observations distinct from measured benchmarks.
+
+`skills.technicalEvidence` connects two technical examples to project IDs.
+`skills.softEvidence` contains two retrospective decision/debugging records,
+including editable titles, skill labels, paragraphs, and project links. These
+records summarize the author's account; they are not original test logs.
+Keep `projectId` values matched to an existing project. Update `site.footer`
+with the actual date when revising the published portfolio.

@@ -24,10 +24,10 @@
     ]
   },
   "about": {
-    "introduction": "I am developing practical skills in Python, web development, and introductory AI applications through coursework and guided projects.",
+    "introduction": "I am a Computer System Technology student exploring how software can make complex systems interactive—from folding paper to querying data and navigating branching chess timelines.",
     "story": [
-      "Java and Python coursework introduced me to debugging and modular design.",
-      "AI projects taught me to ask where an answer came from, how invalid inputs are handled, and whether someone else can reproduce the result."
+      "My projects often start with curiosity about a field I have not worked in before. Implementing a paper-folding solver introduced me to finite element methods; building a browser database workspace let me explore interpreter-adjacent work.",
+      "I use existing tools and research as foundations, then focus on the parts I want to understand and build. Small experiments, existing tests, and realistic scope help me turn those ideas into working demos."
     ],
     "careerGoal": "I am looking for a junior development role where I can contribute code, API integrations, tests, and documentation while learning through code review.",
     "interests": [
@@ -55,86 +55,48 @@
       ]
     }
   ],
-  "projectsIntro": "Five personal projects with live demos: network visualization, multidimensional chess, SQL analysis, origami, and molecular exploration.",
-  "sampleNotice": "Project images are screenshots of the live demos. Internet Pulse is shown in simulation mode, and SQL/REPL uses sample data.",
+  "projectsIntro": "Browser-based experiments in simulation, databases, AI, and scientific visualization—with the engineering decisions behind them.",
+  "sampleNotice": "Screenshots captured from the live demos. Internet Pulse uses simulation mode; SQL/REPL uses sample data.",
   "projects": [
     {
-      "id": "multipdf",
-      "name": "Internet Pulse",
+      "id": "origami",
+      "name": "Origami Lab",
       "status": "Personal project",
-      "description": "Explore internet latency and reachability measurements across an interactive globe and world map.",
+      "description": "Explore 25 paper studies in 3D, adjust their folds, and inspect how a flat sheet becomes a structure.",
       "source": {
-        "label": "",
-        "url": ""
+        "label": "Amanda Ghassaei’s Origami Simulator",
+        "url": "https://origamisimulator.org/"
       },
       "image": {
-        "src": "assets/images/internet-pulse.webp",
-        "alt": "Internet Pulse globe displaying simulated network measurements and latency statistics"
+        "src": "assets/images/origami.webp",
+        "alt": "Origami Lab displaying a blue Miura tessellation at 65% fold with the pattern collection and paper controls"
       },
       "technologies": [
         "JavaScript",
-        "Interactive maps",
-        "RIPE Atlas"
+        "WebGL",
+        "Finite element method",
+        "FOLD files",
+        "3D geometry"
       ],
-      "demoUrl": "https://fl1034.github.io/Map-View/",
+      "demoUrl": "https://fl1034.github.io/Origami-Demo/",
       "roleAndChallenge": [
         {
-          "label": "Feature",
-          "text": "Switch between a globe and world map to explore internet measurements."
+          "label": "",
+          "text": "I implemented a paper-folding solver from a published finite element method. The numerical method came from research; translating it into a working solver was my contribution, and FEM was new to me."
         },
         {
-          "label": "Feature",
-          "text": "Filter observations by probe region and latency, and inspect measurement details."
+          "label": "",
+          "text": "Before tackling the full origami problem, I used AI to build small numerical experiments to check my implementation. Roughly 30% of my test cases converged on my laptop but failed on my phone. Reading the documentation led me to a loss of precision in FP16 storage. Correcting that issue resolved the affected cases."
         }
       ],
       "reflection": [
         {
-          "label": "Design consideration",
-          "text": "Connection arcs show measurement endpoints rather than physical cable routes."
+          "label": "Takeaway",
+          "text": "This project taught me to validate unfamiliar mathematics in small steps and to investigate numerical storage when the same implementation behaves differently across devices."
         },
         {
-          "label": "Design consideration",
-          "text": "Live coverage depends on available probes; simulation offers another way to explore the visualization."
-        }
-      ]
-    },
-    {
-      "id": "chatbot",
-      "name": "5D Chess · AI Spectator",
-      "status": "Personal project",
-      "description": "Explore chess across branching timelines, navigate alternate game continuations, and configure AI players.",
-      "source": {
-        "label": "",
-        "url": ""
-      },
-      "image": {
-        "src": "assets/images/5d-chess.webp",
-        "alt": "5D Chess in its dark theme showing the two initial boards"
-      },
-      "technologies": [
-        "JavaScript",
-        "WebAssembly",
-        "AI models"
-      ],
-      "demoUrl": "https://fl1034.github.io/5dchess_engine_AI/",
-      "roleAndChallenge": [
-        {
-          "label": "Feature",
-          "text": "Navigate boards and game continuations with move history, undo, and redo."
-        },
-        {
-          "label": "Feature",
-          "text": "Configure separate AI players, inspect suggested moves, and import or export games."
-        }
-      ],
-      "reflection": [
-        {
-          "label": "Design consideration",
-          "text": "Branching timelines turn game navigation and visualization into part of the strategy."
-        },
-        {
-          "label": "Design consideration",
-          "text": "AI match controls expose request limits and reported usage alongside player configuration."
+          "label": "In the demo",
+          "text": "Captured from the live app, the screenshot shows a Miura pattern at 65% fold. Adjust folds and inspect crease geometry in the demo to explore the solver’s interactive output."
         }
       ]
     },
@@ -160,63 +122,62 @@
       "demoUrl": "https://fl1034.github.io/sql-repl/",
       "roleAndChallenge": [
         {
-          "label": "Feature",
-          "text": "Write, run, format, and save SQL queries in a browser workspace."
+          "label": "",
+          "text": "I wanted to explore work adjacent to compilers and interpreters within a limited timeframe. I built the UI and a changeset algorithm for a miniature in-browser database, building on an existing codebase rather than writing the SQL engine."
         },
         {
-          "label": "Feature",
-          "text": "Work with local data files and download query results."
+          "label": "",
+          "text": "To prioritize compute and query efficiency, the algorithm computes differences against the original database snapshot instead of computing an update every time. My implementation passed the original codebase’s insert, edit, and deletion tests."
         }
       ],
       "reflection": [
         {
-          "label": "Design consideration",
-          "text": "Local-first analysis brings data exploration into the browser without a server or signup."
+          "label": "Takeaway",
+          "text": "The project gave me experience designing state changes around a clear baseline and checking behavior against existing tests. Efficiency drove the design; I have not established a measured speedup."
         },
         {
-          "label": "Design consideration",
-          "text": "Queries, tabular results, and charts connect data preparation with interpretation."
+          "label": "In the demo",
+          "text": "The live workspace demonstrates the editor and browser-based querying. Its screenshot uses an AI-assisted sample analytics query to show syntax highlighting and tabular results."
         }
       ]
     },
     {
-      "id": "origami",
-      "name": "Origami Lab",
+      "id": "chatbot",
+      "name": "5D Chess · AI Spectator",
       "status": "Personal project",
-      "description": "Explore 25 paper studies in 3D, adjust their folds, and inspect how a flat sheet becomes a structure.",
+      "description": "Explore chess across branching timelines, navigate alternate game continuations, and configure AI players.",
       "source": {
-        "label": "Amanda Ghassaei’s Origami Simulator",
-        "url": "https://origamisimulator.org/"
+        "label": "",
+        "url": ""
       },
       "image": {
-        "src": "assets/images/origami.webp",
-        "alt": "Origami Lab displaying a blue Miura tessellation at 65% fold with the pattern collection and paper controls"
+        "src": "assets/images/5d-chess.webp",
+        "alt": "5D Chess in its dark theme showing the two initial boards"
       },
       "technologies": [
         "JavaScript",
-        "WebGL",
-        "FOLD files",
-        "3D geometry"
+        "WebAssembly",
+        "AI models"
       ],
-      "demoUrl": "https://fl1034.github.io/Origami-Demo/",
+      "demoUrl": "https://fl1034.github.io/5dchess_engine_AI/",
       "roleAndChallenge": [
         {
-          "label": "Feature",
-          "text": "Choose a paper study, drag to fold, and orbit or zoom the 3D model."
+          "label": "",
+          "text": "Discovering that 5D chess with time travel was a real game, and remembering AlphaGo, made me curious about letting AI play it. I adapted an open-source game and rewrote its interface to supply game state to AI players instead of human players."
         },
         {
-          "label": "Feature",
-          "text": "Inspect crease patterns, change paper colors and studio themes, and import or export geometry."
+          "label": "",
+          "text": "Because the models were not specifically trained for this game, I supplied its rules and current state, with retrieval support limited to two queries per turn, each under 50 ms. I observed time travel and timeline branching in roughly 80% of my test cases. Token costs limited the number of completed games."
         }
       ],
       "reflection": [
         {
-          "label": "Design consideration",
-          "text": "Linked creases let a sheet change shape as a coordinated structure."
+          "label": "Takeaway",
+          "text": "The experiment made inference cost a practical constraint on testing. Exercising unusual game mechanics is a useful result, but it does not establish strong play or reliable completion of full matches."
         },
         {
-          "label": "Design consideration",
-          "text": "The simulation explores folding behavior; it is not a step-by-step tutorial or a fabrication guarantee."
+          "label": "In the demo",
+          "text": "The screenshot captures the initial boards. Open the demo to explore AI configuration, navigate game continuations, and inspect branching timelines."
         }
       ]
     },
@@ -242,116 +203,158 @@
       "demoUrl": "https://fl1034.github.io/Molecule/",
       "roleAndChallenge": [
         {
-          "label": "Feature",
-          "text": "Select among nine molecular examples, then rotate and zoom to inspect their structures."
+          "label": "",
+          "text": "I initially wanted to create a visual library of organic chemistry reactions. In the sources I explored, structural-formula images were common, but conveniently usable spatial data was not. Collecting that data at the intended scale was unrealistic."
         },
         {
-          "label": "Feature",
-          "text": "Import molecular files and capture images from the viewer."
+          "label": "",
+          "text": "I narrowed the project to displaying existing protein structures. This was a scope and data-feasibility decision: the resulting Mol*-based viewer displays molecular structures; it does not simulate protein folding or chemical reactions."
         }
       ],
       "reflection": [
         {
-          "label": "Design consideration",
-          "text": "Three-dimensional views make molecular shape and organization easier to explore."
+          "label": "Takeaway",
+          "text": "Investigating the available data changed what I could reasonably deliver. Narrowing the idea preserved its visual exploration goal while avoiding an open-ended data collection effort."
         },
         {
-          "label": "Design consideration",
-          "text": "A focused viewer keeps the structure prominent while leaving molecule selection and import controls close at hand."
+          "label": "In the demo",
+          "text": "The screenshot captures a loaded structure in the live viewer. Select examples, rotate and zoom, or import molecular files to explore the revised project’s focus on existing structures."
+        }
+      ]
+    },
+    {
+      "id": "multipdf",
+      "name": "Internet Pulse",
+      "status": "Personal project",
+      "description": "Explore internet latency and reachability measurements across an interactive globe and world map.",
+      "source": {
+        "label": "",
+        "url": ""
+      },
+      "image": {
+        "src": "assets/images/internet-pulse.webp",
+        "alt": "Internet Pulse globe displaying simulated network measurements and latency statistics"
+      },
+      "technologies": [
+        "JavaScript",
+        "Interactive maps",
+        "RIPE Atlas"
+      ],
+      "demoUrl": "https://fl1034.github.io/Map-View/",
+      "roleAndChallenge": [
+        {
+          "label": "",
+          "text": "I made Internet Pulse as an exploration of data visualization, an area I had not worked in before."
+        },
+        {
+          "label": "",
+          "text": "The project presents network measurements through a globe and world map, with filters for probe region and latency. Its scope is a focused visualization experiment."
+        }
+      ],
+      "reflection": [
+        {
+          "label": "Takeaway",
+          "text": "The view needs context: arcs connect measurement endpoints rather than physical cable routes, and live coverage depends on available probes."
+        },
+        {
+          "label": "In the demo",
+          "text": "The screenshot was captured from the live app in simulation mode. Use the demo to switch views and inspect measurements; the image illustrates the interface rather than current internet conditions."
         }
       ]
     }
   ],
   "skills": {
-    "introduction": "Strongest in Python and guided AI applications, with broader technologies introduced through coursework and practice.",
+    "introduction": "My projects explore numerical simulation, browser-based data tools, AI integration, and scientific visualization. The examples below connect those skills to specific work.",
     "groups": [
       {
-        "name": "Programming",
+        "name": "Simulation & visualization",
         "items": [
-          "Python",
-          "Java",
           "JavaScript",
-          "TypeScript",
-          "C#",
-          "SQL"
+          "WebGL",
+          "Finite element method",
+          "Mol*"
         ],
-        "level": "Python project practice; coursework or introductory exposure in the other languages."
+        "level": "Project experience implementing a paper-folding solver and exploring interactive scientific visualization."
       },
       {
-        "name": "Front end",
+        "name": "Browser data tools",
         "items": [
-          "Streamlit",
-          "HTML5",
-          "CSS3",
-          "React",
-          "Tailwind CSS"
+          "SQL",
+          "DuckDB",
+          "WebAssembly",
+          "Snapshot-based changesets"
         ],
-        "level": "Guided Streamlit applications and foundational web development."
+        "level": "Built a SQL workspace UI and a changeset algorithm around an existing database engine."
       },
       {
-        "name": "Back end & data",
+        "name": "AI integration & validation",
         "items": [
-          "FastAPI",
-          "Node.js",
-          "Express",
-          "ASP.NET Core",
-          "REST APIs",
-          "PostgreSQL",
-          "pandas"
+          "Game-state integration",
+          "Retrieval-augmented generation",
+          "Numerical experiments",
+          "Regression tests"
         ],
-        "level": "Introductory API, service, and data skills."
-      },
-      {
-        "name": "AI & machine learning",
-        "items": [
-          "scikit-learn",
-          "LLM APIs",
-          "Embeddings",
-          "LangChain",
-          "FAISS",
-          "RAG"
-        ],
-        "level": "Guided model and retrieval applications."
-      },
-      {
-        "name": "Tools & deployment",
-        "items": [
-          "Git",
-          "GitHub",
-          "Linux",
-          "pytest",
-          "Docker basics",
-          "Kubernetes fundamentals",
-          "Azure basics"
-        ],
-        "level": "Foundational tooling; cloud integration and packaging are planned capstone work."
+        "level": "Adapted a game for AI players, used AI-assisted experiments to check a solver, and validated database changes against existing tests."
       }
     ],
     "workingStrengths": [
-      "Analytical problem-solving",
-      "Organized debugging",
-      "Clear explanations",
-      "Openness to feedback",
-      "Realistic scope management"
+      "Independent learning",
+      "Analytical debugging",
+      "Scope management",
+      "Resource awareness"
     ],
-    "certifications": "No professional certifications earned yet. Current focus: Azure fundamentals and practical deployment skills."
+    "certifications": "No professional certifications earned yet. Current focus: Azure fundamentals and practical deployment skills.",
+    "technicalEvidence": [
+      {
+        "projectId": "origami",
+        "title": "Numerical implementation · Origami Lab",
+        "text": "A research-derived FEM solver, checked with small numerical experiments and investigated across desktop and mobile. The case study explains the precision failure; the demo shows folding behavior."
+      },
+      {
+        "projectId": "penguins",
+        "title": "Database state & UI · SQL/REPL",
+        "text": "A browser workspace and snapshot-based changeset algorithm. The case study records passing existing insert, edit, and deletion tests; the demo shows the query interface."
+      }
+    ],
+    "softEvidence": [
+      {
+        "id": "origami-debugging",
+        "projectId": "origami",
+        "title": "Debugging across devices",
+        "skills": "Independent learning · Problem-solving",
+        "paragraphs": [
+          "FEM was unfamiliar territory, so I used AI-assisted numerical experiments to build confidence before applying my implementation to a large origami problem.",
+          "About 30% of my test cases converged on my laptop but failed on my phone. I investigated the documentation and traced the discrepancy to FP16 storage precision. Correcting it resolved those failures.",
+          "The lesson I take from this is to test assumptions at a small scale and consider device-dependent numerical behavior. This record summarizes my observations; the live folding demo is the accompanying artifact."
+        ]
+      },
+      {
+        "id": "molecular-scope",
+        "projectId": "molecular",
+        "title": "Choosing a feasible scope",
+        "skills": "Research · Adaptability · Scope management",
+        "paragraphs": [
+          "My original goal was a visual library of organic chemistry reactions. The sources I found usually offered structural-formula images, not spatial data that could be conveniently used in a viewer.",
+          "Rather than undertake an unrealistic data-gathering effort, I changed the goal to displaying existing protein structures. The delivered viewer retains the visual exploration idea within a feasible scope.",
+          "This decision taught me to assess the data requirements before committing to the full feature set. The molecular viewer is evidence of the revised outcome, not a reaction or folding simulator."
+        ]
+      }
+    ]
   },
   "resume": {
-    "summary": "Diploma student seeking junior AI/application development work, with guided project experience in Python applications, introductory machine learning, document retrieval, API integration, and documentation.",
+    "summary": "Computer System Technology student seeking a junior developer role, with project experience implementing a numerical solver, building a browser database UI and changeset algorithm, and adapting an open-source game for AI players.",
     "coreSkills": [
-      "Python",
+      "JavaScript",
       "SQL",
-      "Git",
-      "Streamlit",
-      "pandas",
-      "scikit-learn",
-      "LLM APIs",
-      "RAG"
+      "Numerical simulation",
+      "Database state management",
+      "AI integration",
+      "Debugging"
     ],
     "selectedProjectIds": [
-      "multipdf",
-      "chatbot",
-      "penguins"
+      "origami",
+      "penguins",
+      "chatbot"
     ],
     "experienceHeading": "Selected portfolio projects",
     "nextSteps": "Explore the live demos for all five projects. Practical experience is represented by projects rather than employment."
@@ -384,13 +387,13 @@
     ],
     "labels": {
       "projectNameDescription": "Project name & short description",
-      "technologies": "Technology used",
-      "artifacts": "Artifacts",
-      "roleChallenge": "My role & challenge faced",
-      "reflection": "Reflection",
+      "technologies": "Built with",
+      "artifacts": "Explore the project",
+      "roleChallenge": "Behind the build",
+      "reflection": "What I learned",
       "demo": "Live demo",
       "demoPending": "Live demo — link pending",
-      "source": "Based on",
+      "source": "Project reference",
       "conceptImage": "Concept illustration",
       "viewProjects": "View my projects",
       "viewResume": "View résumé",
@@ -407,15 +410,19 @@
       "skills": "Skills",
       "projects": "Projects",
       "resume": "Résumé",
-      "contact": "Contact"
+      "contact": "Contact",
+      "technicalEvidence": "Technical work in practice",
+      "softEvidence": "Learning & decisions",
+      "evidenceNote": "Retrospective records based on my development experience, prepared with AI writing assistance. They are not contemporaneous test logs.",
+      "evidenceProject": "View the project"
     },
-    "footer": "Student portfolio · 2026"
+    "footer": "Student portfolio · Last updated October 30, 2026"
   },
   "ui": {
     "language": "en",
     "metadata": {
       "title": "{name} | {role}",
-      "description": "Student portfolio: education, programming skills, and AI projects."
+      "description": "Feitian Li’s programming portfolio: browser applications, numerical simulation, AI experiments, and scientific visualization."
     },
     "shell": {
       "skipLink": "Skip to content",
@@ -428,7 +435,7 @@
       "label": "Portfolio navigation",
       "themeToggle": "Toggle light or dark theme"
     },
-    "projectsHeading": "AI & application projects",
+    "projectsHeading": "Selected projects",
     "footer": {
       "creditPrefix": "Template by",
       "creditName": "Magic UI",

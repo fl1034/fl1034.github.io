@@ -20,7 +20,7 @@ const doc = render(data);
 assert.equal(doc.querySelectorAll(".project-card").length, 5);
 for (const card of doc.querySelectorAll(".project-card")) {
     assert.equal(card.querySelectorAll("[data-project-section]").length, 5);
-    for (const key of ["role", "reflection"]) assert.ok(card.querySelectorAll(`[data-project-section=${key}] li`).length > 1);
+    for (const key of ["role", "reflection"]) assert.ok(card.querySelectorAll(`[data-project-section=${key}] p`).length > 1);
     assert.equal(card.querySelectorAll("[data-project-section=artifacts] li").length, 1);
     assert.ok(card.querySelector("img")?.getAttribute("alt"));
 }
@@ -35,7 +35,7 @@ assert.ok(modified.querySelector("main")?.textContent?.includes(changed.projects
 assert.ok(!modified.querySelector("main")?.textContent?.includes(data.profile.name));
 assert.ok(!modified.querySelector("main")?.textContent?.includes(data.profile.email));
 assert.equal(modified.querySelector('a[href^="mailto:"]')?.getAttribute("href"), "mailto:jordan@portfolio.dev");
-assert.equal(modified.querySelector('#project-multipdf [data-project-section=artifacts] a')?.getAttribute("href"), changed.projects[0].demoUrl);
+assert.equal(modified.querySelector(`#project-${changed.projects[0].id} [data-project-section=artifacts] a`)?.getAttribute("href"), changed.projects[0].demoUrl);
 for (const link of modified.querySelectorAll('a[href^="#"]')) assert.ok(modified.getElementById(link.getAttribute("href")!.slice(1)), "Navigation target exists");
 assert.equal(safeWebUrl("javascript:alert(1)"), undefined);
 assert.equal(safeImage("//untrusted.example/image.png"), undefined);
@@ -59,3 +59,17 @@ assert.ok(editedDoc.querySelector('[aria-label="Edited theme control"]'));
 assert.ok(editedDoc.querySelector('.project-card strong')?.textContent?.includes(" → "));
 assert.equal(formatText("{message} / {name}", {message: "$& {name}", name: "Alex"}), "$& {name} / Alex");
 console.log("Passed: editable UI copy, decorative separators, accessibility labels, literal template input.");
+
+for (const project of data.projects) {
+    const card = doc.getElementById(`project-${project.id}`)!;
+    for (const item of [...project.roleAndChallenge, ...project.reflection]) {
+        assert.ok(card.textContent?.includes(item.text), "Complete case-study text is rendered");
+    }
+}
+for (const evidence of data.skills.softEvidence) {
+    const record = doc.getElementById(`evidence-${evidence.id}`)!;
+    assert.ok(record, "Soft-skill record is present");
+    for (const paragraph of evidence.paragraphs) assert.ok(record.textContent?.includes(paragraph));
+    assert.ok(doc.getElementById(`project-${evidence.projectId}`), "Evidence links to an existing project");
+}
+console.log("Passed: complete project narratives and linked soft-skill records.");
